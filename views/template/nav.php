@@ -29,14 +29,17 @@
                                         <nav> 
                                             <ul id="navigation">
                                                 <li><a href="<?php echo "index.php?c=".seg::codificar("principal")."&m=".seg::codificar("index") ?>">Home</a></li>
-                                                <li><a href="#">About</a></li>
+                                                <li><a href="#">Formulario</a>
+                                                    <ul class="submenu">
+                                                        <li><a href="<?php echo "index.php?c=".seg::codificar("login")."&m=".seg::codificar("login") ?>">Login</a></li>
+                                                    </ul>
+                                                </li>
                                                 <li><a href="#">Menu</a></li>
                                                 <li><a href="#">Elementos</a>
                                                     <ul class="submenu">
                                                         <li><a href="elements.html">Element</a></li>
                                                     </ul>
                                                 </li>
-                                                
                                             </ul>
                                         </nav>
                                     </div>
