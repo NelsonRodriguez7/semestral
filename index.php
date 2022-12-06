@@ -1,5 +1,6 @@
 <?php
     /* Comentario de prueba */
+    /*sincronizar*/
     require_once("controllers/principal_controllers.php");
     require_once("utils/seg.php");
     if (count($_GET)==0)
