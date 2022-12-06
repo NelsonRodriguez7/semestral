@@ -32,6 +32,11 @@
                                                 <li><a href="#">Formulario</a>
                                                     <ul class="submenu">
                                                         <li><a href="<?php echo "index.php?c=".seg::codificar("login")."&m=".seg::codificar("login") ?>">Login</a></li>
+                                                        <li><a href="<?php echo "index.php?c=".seg::codificar("registrar")."&m=".seg::codificar("registrar") ?>">Registrarse</a></li>
+                                                        <li><a href="<?php echo "index.php?c=".seg::codificar("administrar")."&m=".seg::codificar("administrar") ?>">Administrar cuenta</a></li>
+                                                        <li><a href="<?php echo "index.php?c=".seg::codificar("modifica")."&m=".seg::codificar("modifica") ?>">Modifica</a></li>
+                                                        <li><a href="<?php echo "index.php?c=".seg::codificar("aggcategoria")."&m=".seg::codificar("aggcategoria") ?>">Agregar Categoria</a></li>
+                                                        <li><a href="<?php echo "index.php?c=".seg::codificar("aggplato")."&m=".seg::codificar("aggplato") ?>">Agregar Plato</a></li>
                                                     </ul>
                                                 </li>
                                                 <li><a href="#">Menu</a></li>
