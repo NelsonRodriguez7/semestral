@@ -64,7 +64,7 @@
                         <div class="col-xl-9 col-lg-8">
                             <div class="footer-copy-right">
                                 <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | GRUPO 1
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Anthony G - Jose M - Luis N - Josting R - Nelson R
   <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                             </div>
                         </div>
