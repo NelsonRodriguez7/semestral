@@ -20,7 +20,53 @@
         {  
         }
 
+        public function insertar()
+        {
+        $conexion = bd::connection();
+        $coleccion = $conexion->usuario;
+        try {
 
+            $this->salt = sha1(random_bytes(10));
+            $this->password = sha1($this->password . "|" . $this->salt);
+
+            $resultados = $coleccion->insertOne([
+                "usuario" => $this->usuario,
+                "correo" => $this->correo,
+                "password" => $this->password,
+                "salt" => $this->salt,
+                "nombre_contacto" => $this->nombre_contacto,
+                "nombre_restaurante" => $this->nombre_restaurante,
+                "imagen_fondo" => "",
+                "logo_empresa" => "",
+                "tipo_usuario" => 2,
+                "fecha_registro" => date("Y-m-d"),
+                "monto_pago" => 0.00,
+                "status" => 0,
+                "cuenta_paypal" => $this->cuenta_paypal
+            ]);
+            $this->id = $resultados->getInsertedId();
+            return $this;
+        } catch (Exception $e) {
+            return null;
+        }
+        }
+
+        public function valida_usuario()
+        {
+        $conexion = bd::connection();
+        $coleccion = $conexion->usuario;
+        $resultado = $coleccion->find(["usuario" => $this->usuario]);
+
+        foreach ($resultado as $r) {
+            $salt = $r->salt;
+            $password = sha1($this->password . "|" . $salt);
+            if (hash_equals($password, $r->password))
+                return $r;
+            else
+                return [];
+        }
+        return [];
+        }
 
 
 
