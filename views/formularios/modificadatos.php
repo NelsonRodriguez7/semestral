@@ -22,6 +22,12 @@
                                     <input type="email" name="modificacorreopaypal" placeholder="Ejemplo: jperezxd@dominio.com" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ejemplo: jperezxd@dominio.com'" required="" class="single-input">
                                     <h5>Imagen de Fondo</h5>
                                     <input type="email" name="modificaurllogouser" placeholder="url del logo de imagen de fondo (800x800px)" onfocus="this.placeholder = ''" onblur="this.placeholder = 'url del logo de imagen de fondo (800x800px)'" required="" class="single-input">
+                                    <form action=“destino.php" method="post" enctype="multipart/form-data">
+                                    <input class="form-control" type="file" id="formFile" name="foto" accept="image/*">
+                                    <BR>
+                                    <button type="submit" class="btn btn-primary">Subir</button>
+                                    <form>
+
                                     <p><FONT COLOR="red">(*) Obligatorio</FONT></p>
                                 </div>
                                 <div>
