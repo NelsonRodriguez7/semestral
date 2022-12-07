@@ -12,7 +12,12 @@
                 </div>  
                 <div class="row justify-content-center">
                     <div class="col-12">
-                        <form action="#">
+                        <?php if($msg != "") {?>
+                            <div class="alert alert-danger" role="alert">
+                                <strong><?php echo $msg?></strong>
+                            </div>
+                        <?php }?>
+                        <form method="POST" action="<?php echo "index.php?c=".seg::codificar("login")."&m=".seg::codificar("validar_usuario") ?>">
                             <div class="booking-wrap d-flex justify-content-between align-items-center">
                                 <div>
                                     <h5>Usuario <FONT COLOR="red">(*) </FONT></h5>
@@ -21,6 +26,7 @@
                                 <div>
                                     <h5>Password <FONT COLOR="red">(*) </FONT></h5>
                                     <input type="password" name="loginpassword" placeholder="Ejemplo: J_perez_123" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ejemplo: aASk_a123ASjm'" required="" class="single-input">
+                                    <input type="hidden" name="token" value="<?php echo seg::getToken() ?>">
                                 </div>
                                 <div class="single-select-box mb-30">
                                     <button class="btn select-btn">Iniciar</button>
