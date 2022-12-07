@@ -31,6 +31,7 @@
                                     <br>
                                     <form action=“destino.php" method="post" enctype="multipart/form-data">
                                     <input class="form-control" type="file" id="formFile" name="foto" accept="image/*">
+                                    <br>
                                     <button type="submit" class="btn btn-primary">Subir</button>
                                     <form>
 
