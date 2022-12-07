@@ -32,7 +32,7 @@
                                     <form action=“destino.php" method="post" enctype="multipart/form-data">
                                     <input class="form-control" type="file" id="formFile" name="foto" accept="image/*">
                                     <br>
-                                    <button type="submit" class="btn btn-primary">Subir</button>
+                                    <button type="submit" name="file" id="custom-file-input" class="btn btn-primary">Subir</button>
                                     <form>
 
                                 </div>
@@ -40,6 +40,9 @@
                                 <!-- Single Select Box -->
                                 <div class="single-select-box mb-30">
                                     <button class="btn select-btn">Agregar</button>
+
+
+
                                 </div>
                             </div>
                         </form>
