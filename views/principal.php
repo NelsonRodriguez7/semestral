@@ -13,7 +13,21 @@
                                     <p data-animation="fadeInLeft" data-delay=".6s">Utiliza todas nuestras herramientras para llegar a más personas y descubre como la implementacion de un QR para mostrar tu menu llama la atención de tu clientes.</p>
                                     <!-- Hero-btn -->
                                     <div class="hero__btn">
-                                        <a href="#" class="btn hero-btn"  data-animation="fadeInLeft" data-delay=".8s">Paga $49.99</a>
+                                    <form target="paypal" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="POST">
+                                        <input type="hidden" name="cmd" value="_xclick">
+                                        <input type="hidden" name="business" value="sb-uecs315353654@business.example.com">
+                                        <input type="hidden" name="item_name" value="Suscripción Pago único de Grupo4.com">
+                                        <input type="hidden" name="item_number" value="cod00001">
+                                        <input type="hidden" name="amount" value="49.99">
+                                        <input type="hidden" name="tax" value="0">
+                                        <input type="hidden" name="quantity" value="1">
+                                        <input type="hidden" name="currency_code" value="USD">
+                                        <input type="hidden" name="country" value="PA">
+                                        <input type="hidden" name="return" value="<?php echo  $_SERVER["REQUEST_SCHEME"] . "://" . $_SERVER["SERVER_NAME"] . "/index.php?c=" . seg::codificar("pagos_paypal") . "&m=" . seg::codificar("retorno") ?>">
+                                        <input type='hidden' name='notify_url' value="<?php echo  $_SERVER["REQUEST_SCHEME"] . "://" . $_SERVER["SERVER_NAME"] . "/index.php?c=" . seg::codificar("pagos_paypal") . "&m=" . seg::codificar("registar_notificacion") ?>">
+                                        <input type='hidden' name='cancel_return' value="<?php echo  $_SERVER["REQUEST_SCHEME"] . "://" . $_SERVER["SERVER_NAME"] . "/index.php?c=" . seg::codificar("pagos_paypal") . "&m=" . seg::codificar("cancelar") ?>">
+                                        <input type="submit" name="submit" value="Pagar con Paypal $49.99 " class="btn hero-btn"  data-animation="fadeInLeft" data-delay=".8s">
+                                    </form>
                                     </div>
                                 </div>
                             </div>
@@ -31,7 +45,21 @@
                                     <p data-animation="fadeInLeft" data-delay=".6s">Te ofrecemos un menu qr donde puedes tener todos tus platilos con imagenes, precio, descripcion; Ademas de subir tu logo y banner</p>
                                     <!-- Hero-btn -->
                                     <div class="hero__btn">
-                                        <a href="industries.html" class="btn hero-btn"  data-animation="fadeInLeft" data-delay=".8s">Paga $49.99</a>
+                                    <form target="paypal" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="POST">
+                                        <input type="hidden" name="cmd" value="_xclick">
+                                        <input type="hidden" name="business" value="sb-xjvjt5546020@business.example.com">
+                                        <input type="hidden" name="item_name" value="Suscripción Pago único de Grupo4.com">
+                                        <input type="hidden" name="item_number" value="cod00001">
+                                        <input type="hidden" name="amount" value="49.99">
+                                        <input type="hidden" name="tax" value="0">
+                                        <input type="hidden" name="quantity" value="1">
+                                        <input type="hidden" name="currency_code" value="USD">
+                                        <input type="hidden" name="country" value="PA">
+                                        <input type="hidden" name="return" value="<?php echo  $_SERVER["REQUEST_SCHEME"] . "://" . $_SERVER["SERVER_NAME"] . "/index.php?c=" . seg::codificar("pagos_paypal") . "&m=" . seg::codificar("retorno") ?>">
+                                        <input type='hidden' name='notify_url' value="<?php echo  $_SERVER["REQUEST_SCHEME"] . "://" . $_SERVER["SERVER_NAME"] . "/index.php?c=" . seg::codificar("pagos_paypal") . "&m=" . seg::codificar("registar_notificacion") ?>">
+                                        <input type='hidden' name='cancel_return' value="<?php echo  $_SERVER["REQUEST_SCHEME"] . "://" . $_SERVER["SERVER_NAME"] . "/index.php?c=" . seg::codificar("pagos_paypal") . "&m=" . seg::codificar("cancelar") ?>">
+                                        <input type="submit" name="submit" value="Pagar con Paypal $49.99 " class="btn hero-btn"  data-animation="fadeInLeft" data-delay=".8s">
+                                    </form>
                                     </div>
                                 </div>
                             </div>

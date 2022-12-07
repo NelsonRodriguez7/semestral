@@ -1,6 +1,6 @@
 <?php
 require_once("utils/bd.php");
-require_once("models/usuario.php");
+require_once("models/usuarios_models.php");
 
 class pagos_paypal
 {

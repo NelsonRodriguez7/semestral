@@ -11,11 +11,11 @@ class pagos_paypal_controller
 
     public static function retorno()
     {
-        header("location:" . "index.php?c=" . seg::codificar("mensaje") . "&m=" . seg::codificar("index") . "&msg=Gracias por su pago, su cuenta se ha actualizado satisfactoriamente!!<br>Debes inicar sesion nuevamente para que los cambos sean aplicados");
+        header("location:" . "index.php?c=" . seg::codificar("principal") . "&m=" . seg::codificar("index") . "&msg=Gracias por su pago, su cuenta se ha actualizado satisfactoriamente!!<br>Debes inicar sesion nuevamente para que los cambos sean aplicados");
     }
 
     public static function cancelar()
     {
-        header("location:" . "index.php?c=" . seg::codificar("mensaje") . "&m=" . seg::codificar("index") . "&msg=Has cancelado tu compra!!");
+        header("location:" . "index.php?c=" . seg::codificar("principal") . "&m=" . seg::codificar("index") . "&msg=Has cancelado tu compra!!");
     }
 }
