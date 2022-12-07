@@ -49,7 +49,11 @@
                                         </nav>
                                     </div>
                                     <div class="header-right-btn f-right d-none d-lg-block ml-20">
-                                        <a href="#" class="border-btn header-btn">Login</a>
+                                    <?php if(isset($_SESSION["usuario"])) {?>
+                                        <a href="<?php echo "index.php?c=".seg::codificar("login")."&m=".seg::codificar("cerrar_sesion") ?>" class="border-btn header-btn">Logout</a>
+                                    <?php }else{?>
+                                        <a href="<?php echo "index.php?c=".seg::codificar("login")."&m=".seg::codificar("login") ?>" class="border-btn header-btn">Login</a>
+                                    <?php } ?>
                                     </div>
                                 </div>
                             </div>   

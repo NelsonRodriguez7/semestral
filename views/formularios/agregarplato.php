@@ -25,8 +25,16 @@
                                 <div>
                                     <h5>Descripción <FONT COLOR="red">(*) </FONT></h5>
                                     <input type="email" name="aggplatodescripcioncat" placeholder="Descripción de la categoría" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Descripción de la categoría'" required="" class="single-input">
-                                    <h5>Foto <FONT COLOR="red">(*) </FONT></h5>
-                                    <input type="password" name="aggplatofoto" placeholder="poner para sacar de biblioteca de archivos xd" onfocus="this.placeholder = ''" onblur="this.placeholder = 'poner para sacar de biblioteca de archivos xd'" required="" class="single-input">
+                                    <h5>Foto agregar<FONT COLOR="red">(*) </FONT></h5>
+                                    
+                                     <input type="password" name="aggplatofoto" placeholder="Nombre de foto" onfocus="this.placeholder = ''" onblur="this.placeholder = 'poner para sacar de biblioteca de archivos xd'" required="" class="single-input"> 
+                                    <br>
+                                    <form action=“destino.php" method="post" enctype="multipart/form-data">
+                                    <input class="form-control" type="file" id="formFile" name="foto" accept="image/*">
+                                    <br>
+                                    <button type="submit" class="btn btn-primary">Subir</button>
+                                    <form>
+
                                 </div>
                                 
                                 <!-- Single Select Box -->
