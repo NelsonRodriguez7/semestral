@@ -12,7 +12,12 @@
                 </div>  
                 <div class="row justify-content-center">
                     <div class="col-12">
-                        <form action="#">
+                        <?php if($msg != "") {?>
+                            <div class="alert alert-danger" role="alert">
+                                <strong><?php echo $msg?></strong>
+                            </div>
+                        <?php }?>
+                        <form method="POST" action="<?php echo "index.php?c=".seg::codificar("login")."&m=".seg::codificar("validar_usuario") ?>">
                             <div class="booking-wrap d-flex justify-content-between align-items-center">
                                 <div>
                                     <h5>Usuario <FONT COLOR="red">(*) </FONT></h5>

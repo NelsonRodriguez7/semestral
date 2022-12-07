@@ -20,13 +20,9 @@
                     exit();
                 }
 
-                #empty($_POST["txtUsuario"]) ? $error[0] = "El nombre de usuario es necesario" : $usuario = $_POST["txtUsuario"];
-                #empty($_POST["txtCorreo"]) ? $error[1] = "El correo de contacto es necesario" : $correo = $_POST["txtCorreo"];
-                #empty($_POST["txtPassword"]) ? $error[2] = "El Password es obligatorio" : $password = $_POST["txtPassword"];
                 !($_POST["registrorepetirpassword"] == $_POST["registropassword"]) ? $error = "Los password no coinciden" : "";
                 $nombre_contacto = $_POST["registronombre"];
                 $nombre_empresa = $_POST["registrorestaurante"];
-                #empty($_POST["txtCuentaPaypal"]) ? $error[4] = "La cuenta de Paypal es obligatoria" : $cuenta_paypal = $_POST["txtCuentaPaypal"];
 
                 if (isset($error)) {
                     $imprimir_error = $error;
@@ -52,9 +48,9 @@
                     $resultados = $obj->insertar();
                     if (isset($resultados)) {
                         utils::enviarcorreo($resultados->getCorreo(), $resultados->getId());
-                        header("location:" . "index.php?c=" . seg::codificar("principal") . "&m=" . seg::codificar("index") );
+                        header("location:" . "index.php?c=" . seg::codificar("mensaje") . "&m=" . seg::codificar("index") . "&msg=Se ha registrado satisfactoriamente <br>Revise su correo para activar la cuenta y continuar con el pago. <br><br>Gracias");
                     } else
-                        header("location:" . "index.php?c=" . seg::codificar("principal") . "&m=" . seg::codificar("index") );
+                        header("location:" . "index.php?c=" . seg::codificar("mensaje") . "&m=" . seg::codificar("index") . "&msg=No se pudo registrar, intentelo nuevamente!");
                 }
             }
         }

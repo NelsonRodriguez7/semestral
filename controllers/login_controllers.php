@@ -4,6 +4,7 @@
     require_once("utils/utils.php");
     class login_controllers{
         public static function login(){
+            $msg = isset($_GET["msg"])?$_GET["msg"]:"";
             $title = "Login | DS 7";
             require_once("views/template/header.php");
             require_once("views/template/nav.php");
@@ -25,7 +26,7 @@
 
             if (count($resultado) > 0) {
                 if ($resultado->status == "0") {
-                    header("location:" . "index.php?c=" . seg::codificar("login") . "&m=" . seg::codificar("login"));
+                    header("location:" . "index.php?c=" . seg::codificar("mensaje") . "&m=" . seg::codificar("index") . "&msg=El usuario todavía no ha confirmado el correo");
                     exit();
                 }
                 $_SESSION["nombre_contacto"] =  $resultado["nombre_contacto"];
@@ -40,7 +41,7 @@
                 }
                 header("location:index.php");
             } else
-                header("location:" . "index.php?c=" . seg::codificar("principal") . "&m=" . seg::codificar("mensaje") . "&msg=Usuario o Contraseña incorrectos");
+                header("location:" . "index.php?c=" . seg::codificar("login") . "&m=" . seg::codificar("login") . "&msg=Usuario o Contraseña incorrectos");
         }
         }
 
@@ -50,9 +51,9 @@
         $obj->setId($_GET["s"]);
         $resultado = $obj->activar_usuario();
         if ($resultado == 1) {
-            header("location:" . "index.php?c=" . seg::codificar("principal") . "&m=" . seg::codificar("index") );
+            header("location:" . "index.php?c=" . seg::codificar("mensaje") . "&m=" . seg::codificar("index") . "&msg=Ya has activado tu cuenta, puedes entrar");
         } else
-            header("location:" . "index.php?c=" . seg::codificar("principal") . "&m=" . seg::codificar("index") );
+            header("location:" . "index.php?c=" . seg::codificar("mensaje") . "&m=" . seg::codificar("index") . "&msg=No se pudo activar tu cuenta. Intenta más tarde");
         }
 
         public static function cerrar_sesion()

@@ -13,7 +13,7 @@
                                     <p data-animation="fadeInLeft" data-delay=".6s">Utiliza todas nuestras herramientras para llegar a más personas y descubre como la implementacion de un QR para mostrar tu menu llama la atención de tu clientes.</p>
                                     <!-- Hero-btn -->
                                     <div class="hero__btn">
-                                        <a href="industries.html" class="btn hero-btn"  data-animation="fadeInLeft" data-delay=".8s">Paga $49.99</a>
+                                        <a href="#" class="btn hero-btn"  data-animation="fadeInLeft" data-delay=".8s">Paga $49.99</a>
                                     </div>
                                 </div>
                             </div>

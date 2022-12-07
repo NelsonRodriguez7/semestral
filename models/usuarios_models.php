@@ -85,6 +85,40 @@
         }
         }
 
+        public function actualizar_datos_generales()
+        {
+        $conexion = bd::connection();
+        $coleccion = $conexion->usuario;
+        try {
+            $resultados = $coleccion->updateOne(
+                ["_id" => new MongoDB\BSON\ObjectId($this->id)],
+                ['$set' => [
+                    "correo" => $this->correo,
+                    "nombre_contacto" => $this->nombre_contacto,
+                    "nombre_restaurante" => $this->nombre_restaurante,
+                    "imagen_fondo" => $this->imagen_fondo,
+                    "logo_empresa" => $this->logo_empresa,
+                    "cuenta_paypal" => $this->cuenta_paypal
+                ]]
+            );
+            return $resultados->getModifiedCount();
+        } catch (Exception $e) {
+            return 0;
+        }
+        }
+
+        public function ver_mis_datos()
+        {
+        $conexion = bd::connection();
+        $coleccion = $conexion->usuario;
+        $resultado = $coleccion->find(["_id" => new MongoDB\BSON\ObjectId($this->id)]);
+
+        foreach ($resultado as $r) {
+            return $r;
+        }
+        return [];
+        }
+
         public function getId()
         {
             return $this->id;

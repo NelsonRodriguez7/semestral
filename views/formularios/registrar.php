@@ -11,7 +11,7 @@
                 </div>  
                 <div class="row justify-content-center">
                     <div class="col-12">
-                        <form method="POST" action="<?php echo "index.php?c=".seg::codificar("registrar")."&m=".seg::codificar("insertar") ?> met">
+                        <form method="POST" action="<?php echo "index.php?c=".seg::codificar("registrar")."&m=".seg::codificar("insertar") ?>" >
                             <div class="booking-wrap d-flex justify-content-between align-items-center">
                                 <div>
                                     <h5>Usuario <FONT COLOR="red">(*) </FONT></h5>
