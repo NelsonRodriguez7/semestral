@@ -10,6 +10,8 @@
     require_once("controllers/mensaje_controllers.php");
     require_once("controllers/pagos_paypal_controllers.php");
     require_once("utils/seg.php");
+    require_once("utils/utils.php");
+
     if (count($_GET)==0)
         call_user_func("principal_controllers::index");
     else{

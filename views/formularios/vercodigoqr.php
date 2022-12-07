@@ -14,8 +14,8 @@
                     <div class="col-12">
                     </div>
 				<p><?php echo $url . "<br>" ?></p>
-				<div style="margin-left: auto;margin-right: auto;display: block;"><img src="#" alt="">
-					<br><a href="#" target="_blank"><button type="button" class="btn btn-primary">Descargar</button></a>
+				<div style="margin-left: auto;margin-right: auto;display: block;"><img src="<?php echo utils::generarqr($url) ?>" alt="">
+					<br><a href="<?php echo utils::generarqr($url) ?>" target="_blank"><button type="button" class="btn btn-primary">Descargar</button></a>
 				</div>
 
                     </div>

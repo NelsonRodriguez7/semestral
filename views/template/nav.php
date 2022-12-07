@@ -37,6 +37,7 @@
                                                         <li><a href="<?php echo "index.php?c=".seg::codificar("modifica")."&m=".seg::codificar("modifica") ?>">Modifica</a></li>
                                                         <li><a href="<?php echo "index.php?c=".seg::codificar("aggcategoria")."&m=".seg::codificar("aggcategoria") ?>">Agregar Categoria</a></li>
                                                         <li><a href="<?php echo "index.php?c=".seg::codificar("aggplato")."&m=".seg::codificar("aggplato") ?>">Agregar Plato</a></li>
+                                                        <li><a href="<?php echo "index.php?c=".seg::codificar("formularios")."&m=".seg::codificar("vercodigoqr") ?>">Agregar Plato</a></li>
                                                     </ul>
                                                 </li>
                                                 <li><a href="#">Menu</a></li>

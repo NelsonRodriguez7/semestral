@@ -54,5 +54,35 @@
                 }
             }
         }
+
+        public static function vercodigoqr()
+        {
+
+            if (!isset($_SESSION["usuario"])) {
+                header("location:" . "index.php?c=" . seg::codificar("mensaje") . "&m=" . seg::codificar("index") . "&msg=No se pudo registrar, intentelo nuevamente!");
+                exit();
+            }
+            
+            $url= $_SERVER["REQUEST_SCHEME"] . "://" . $_SERVER["SERVER_NAME"] . "/index.php?c=" . seg::codificar("registrar") . "&m=" . seg::codificar("ver_menu") . "&id=" . $_SESSION["usuario"] ;
+            $title="Qr";
+            require_once("views/template/header.php");
+            require_once("views/template/nav.php");
+            require_once("views/formularios/vercodigoqr.php");
+            require_once("views/template/footer.php");
+        }
+
+        public static function ver_menu()
+        {
+            $id_usuario = $_GET["id"];
+           
+            require_once("views/template/header.php");
+            require_once("views/menu/menu.php");
+            require_once("views/template/footer.php");
+        }
+
+
+
+
+
     }
 ?>

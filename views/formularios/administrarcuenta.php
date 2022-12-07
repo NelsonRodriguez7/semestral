@@ -21,7 +21,7 @@
                             <a href="<?php echo "index.php?c=".seg::codificar("menu")."&m=".seg::codificar("menu") ?>" class="genric-btn danger-border radius">Ver menú</a>
                         </div> 
                         <div class="section-tittle text-center mb-40"> 
-                            <a href="<?php echo "index.php?c=".seg::codificar("login")."&m=".seg::codificar("login") ?>" class="genric-btn danger-border radius">Ver código QR</a>
+                        <a href="<?php echo "index.php?c=".seg::codificar("registrar")."&m=".seg::codificar("vercodigoqr") ?>" class="genric-btn danger-border radius">Ver código QR</a>
                         </div> 
                     </div>
                 </div>  
