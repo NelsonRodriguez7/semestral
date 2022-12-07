@@ -21,6 +21,7 @@
                                 <div>
                                     <h5>Password <FONT COLOR="red">(*) </FONT></h5>
                                     <input type="password" name="loginpassword" placeholder="Ejemplo: J_perez_123" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ejemplo: aASk_a123ASjm'" required="" class="single-input">
+                                    <input type="hidden" name="token" value="<?php echo seg::getToken() ?>">
                                 </div>
                                 <div class="single-select-box mb-30">
                                     <button class="btn select-btn">Iniciar</button>

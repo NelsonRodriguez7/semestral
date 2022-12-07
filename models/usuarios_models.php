@@ -68,8 +68,22 @@
         return [];
         }
 
-
-
+        public function activar_usuario()
+        {
+        $conexion = bd::connection();
+        $coleccion = $conexion->usuario;
+        try {
+            $resultados = $coleccion->updateOne(
+                ["_id" => new MongoDB\BSON\ObjectId($this->id)],
+                ['$set' => [
+                    "status" => 1
+                ]]
+            );
+            return $resultados->getModifiedCount();
+        } catch (Exception $e) {
+            return 0;
+        }
+        }
 
         public function getId()
         {

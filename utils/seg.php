@@ -14,6 +14,7 @@
                 return $_SESSION["token"];
 
             $token = sha1(random_bytes(100));
+            $_SESSION["token"] = $token;
             return $token;
         }
 
