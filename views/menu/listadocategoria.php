@@ -3,43 +3,36 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="cl-xl-7 col-lg-8 col-md-10">
-                        <!-- Section Tittle -->
+                        <!-- Section Tittle aaaaaaaaaaaaaaaaaaaaaaaaa-->
                         <div class="section-tittle text-center mb-40"> 
-                            <h2>Lista de Categoría</h2>
+                            <h2>Lista de Categoría</h2>   
+                        </div> 
+                        <div class="section-tittle text-center mb-40"> 
+                        <a href="<?php echo "index.php?c=".seg::codificar("aggcategoria")."&m=".seg::codificar("aggcategoria") ?>" class="genric-btn danger-border radius">Agregar Categoría</a>
+                        </div> 
+                        <div class="section-tittle text-center mb-40"> 
+                            <table class="table table-sm table-responsive-sm">
+                                <thead>
+                                <tr>
+                                    <th>Descripción</th>
+                                    <th>Acciones</th>
+                                </tr>
+                                    </thead>
+                                    <tbody>
+                                    <?php foreach ($resultado as $r) { ?>
+                                <tr>
+                                    <td><?php echo $r->nombre_categoria ?></td>
+                                    <td><a href="<?php echo "index.php?c=" . seg::codificar("listadocategoria") . "&m=" . seg::codificar("modificar") . "&id=" . $r->_id ?>" class="genric-btn info-border radius">Modificar</a>
+                                    <a href="<?php echo "index.php?c=" . seg::codificar("listadocategoria") . "&m=" . seg::codificar("eliminar") . "&id=" . $r->_id ?>" class="genric-btn danger-border radius">Eliminar</a></td>
+                                </tr>
+                                <?php } ?>
+                                </tbody>
+                            </table>
                         </div> 
                     </div>
                 </div>  
-                <div class="row justify-content-center">
-                    <div class="col">
-                        <form action="#">
-                            <div class="booking-wrap d-flex justify-content-between align-items-center">
-                                <div>
-                                    <h5>Descripción <FONT COLOR="red">(*) </FONT></h5>
-                                    <input type="text" name="aggplatodescripcion" placeholder="Ejemplo: Pancakes" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ejemplo: Pancakes'" required="" class="single-input">
-                                    <h5>Precio <FONT COLOR="red">(*) </FONT></h5>
-                                    <input type="password" name="aggplatopprecio" placeholder="Ejemplo: 22.00" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ejemplo: 22.00'" required="" class="single-input">
-                                    <h5>Categoría <FONT COLOR="red">(*) </FONT></h5>
-                                    <input type="text" name="aggplatocategoria" placeholder="Ejemplo: Desayunos Ligth" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ejemplo: Desayunos Ligth'" required="" class="single-input">
-                                    <p><FONT COLOR="red">(*) Obligatorio</FONT></p>
-                                </div>
-                                <div>
-                                    <h5>Descripción <FONT COLOR="red">(*) </FONT></h5>
-                                    <input type="email" name="aggplatodescripcioncat" placeholder="Descripción de la categoría" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Descripción de la categoría'" required="" class="single-input">
-                                    <h5>Foto <FONT COLOR="red">(*) </FONT></h5>
-                                    <input type="password" name="aggplatofoto" placeholder="poner para sacar de biblioteca de archivos xd" onfocus="this.placeholder = ''" onblur="this.placeholder = 'poner para sacar de biblioteca de archivos xd'" required="" class="single-input">
-                                </div>
-                                
-                                <!-- Single Select Box -->
-                                <div class="single-select-box mb-30">
-                                    <button class="btn select-btn">Agregar</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
             </div>
         </div>
-        <!-- Booking Room End-->
-        <!-- About-2 Area End -->
+
        
 </main>

@@ -9,6 +9,7 @@
     require_once("controllers/menu_controllers.php");
     require_once("controllers/mensaje_controllers.php");
     require_once("controllers/pagos_paypal_controllers.php");
+    require_once("controllers/listadocategoria_controllers.php");
     require_once("utils/seg.php");
     require_once("utils/utils.php");
 
