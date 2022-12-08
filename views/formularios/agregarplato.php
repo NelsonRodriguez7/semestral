@@ -17,14 +17,14 @@
                                     <h5>Descripción <FONT COLOR="red">(*) </FONT></h5>
                                     <input type="text" name="aggplatodescripcion" placeholder="Ejemplo: Pancakes" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ejemplo: Pancakes'" required="" class="single-input">
                                     <h5>Precio <FONT COLOR="red">(*) </FONT></h5>
-                                    <input type="password" name="aggplatopprecio" placeholder="Ejemplo: 22.00" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ejemplo: 22.00'" required="" class="single-input">
+                                    <input type="text" name="aggplatopprecio" placeholder="Ejemplo: 22.00" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ejemplo: 22.00'" required="" class="single-input">
                                     <h5>Categoría <FONT COLOR="red">(*) </FONT></h5>
                                     <input type="text" name="aggplatocategoria" placeholder="Ejemplo: Desayunos Ligth" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ejemplo: Desayunos Ligth'" required="" class="single-input">
                                     <p><FONT COLOR="red">(*) Obligatorio</FONT></p>
                                 </div>
                                 <div>
                                     <h5>Descripción <FONT COLOR="red">(*) </FONT></h5>
-                                    <input type="email" name="aggplatodescripcioncat" placeholder="Descripción de la categoría" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Descripción de la categoría'" required="" class="single-input">
+                                    <input type="text" name="aggplatodescripcioncat" placeholder="Descripción de la categoría" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Descripción de la categoría'" required="" class="single-input">
                                     <h5>Foto agregar<FONT COLOR="red">(*) </FONT></h5>
                                     
                                      <input type="password" name="aggplatofoto" placeholder="Nombre de foto" onfocus="this.placeholder = ''" onblur="this.placeholder = 'poner para sacar de biblioteca de archivos xd'" required="" class="single-input"> 
