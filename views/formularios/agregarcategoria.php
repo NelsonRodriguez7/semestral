@@ -11,14 +11,14 @@
                 </div>  
                 <div class="row justify-content-center">
                     <div class="col">
-                        <form action="#">
+                        <form action="<?php echo "index.php?c=".seg::codificar("listadocategoria")."&m=".seg::codificar("insertar") ?>" method="POST">
                             <div class="booking-wrap d-flex justify-content-between align-items-center">
                                 <div>
                                     <h5>Descripción <FONT COLOR="red">(*) </FONT></h5>
-                                    <input type="text" name="registrousuario" placeholder="Descripción de categoría" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ejemplo: Jperez'" required="" class="single-input">
+                                    <input type="text" name="txtDescripcion" placeholder="Descripción de categoría" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ejemplo: Jperez'" required="" class="single-input">
                                     <p><FONT COLOR="red">(*) Obligatorio</FONT></p>
                                 </div>
-                                
+                                <input type="hidden" name="token" value="<?php echo seg::getToken() ?>">
                                 <!-- Single Select Box -->
                                 <div class="single-select-box mb-30">
                                     <button class="btn select-btn">Agregar</button>

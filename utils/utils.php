@@ -4,38 +4,12 @@ class utils
 {
     public static function enviarcorreo($correo, $id)
     {
-        $to = $correo;
-        $from = "grupo4@ddinnova.info";
-        $name = "Grupo 4";
-        $subject = "Activacion de Cuenta";
-        $cmessage = "Profe por fa ponganos 100 :)";
-
-        $headers = "From: $from";
-        $headers = "From: " . $from . "\r\n";
-        $headers .= "Reply-To: ". $from . "\r\n";
+        $headers = "From: grupo4@ddinnova.info\r\n";
         $headers .= "MIME-Version: 1.0\r\n";
-        $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-
-        $subject = "You have a message from your Bitmap Photography.";
-
-        $logo = 'img/logo.png';
-        $link = $_SERVER["REQUEST_SCHEME"] . "://" . $_SERVER["SERVER_NAME"] . "/index.php?c=" . seg::codificar("usuario") . "&m=" . seg::codificar("activar") . "&s=" . $id;
-
-        $body = "<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><title>Express Mail</title></head><body>";
-        $body .= "<table style='width: 100%;'>";
-        $body .= "<thead style='text-align: center;'><tr><td style='border:none;' colspan='2'>";
-        $body .= "<a href='{$link}'><img src='{$logo}' alt=''></a><br><br>";
-        $body .= "</td></tr></thead><tbody><tr>";
-        $body .= "<td style='border:none;'><strong>Name:</strong> {$name}</td>";
-        $body .= "<td style='border:none;'><strong>Email:</strong> {$from}</td>";
-        $body .= "</tr>";
-        $body .= "<tr><td style='border:none;'><strong>Subject:</strong> {$subject}</td></tr>";
-        $body .= "<tr><td></td></tr>";
-        $body .= "<tr><td colspan='2' style='border:none;'>{$cmessage}</td></tr>";
-        $body .= "</tbody></table>";
-        $body .= "</body></html>";
-
-        echo mail($to, $subject, $body, $headers);
+        $headers .= "Content-Type: text/html; charset=utf-8\r\n";
+        $link = $_SERVER["REQUEST_SCHEME"] . "://" . $_SERVER["SERVER_NAME"] . "/index.php?c=" . seg::codificar("login") . "&m=" . seg::codificar("activar") . "&s=" . $id;
+        $mensaje = '<h1>Activar Cuenta</h1>Da clic en el siguiente link para activar tu cuenta: <a href="' . $link . '">Activar tu cuenta</a>';
+        echo mail($correo, "Activa tu cuenta", $mensaje, $headers);
     }
 
     public static function subir_archivo($archivo_temporal, $archivo, $destino)
@@ -49,6 +23,34 @@ class utils
         else
             return null;
     }
+    public static function generarqr($url)
+    {
+        require_once("libs/codigo_qr/qrlib.php");
+
+        //Declaramos una carpeta temporal para guardar la imágenes generadas
+        $dir = 'libs/temp/';
+        
+        //Si no existe la carpeta la creamos
+        if (!file_exists($dir))
+            mkdir($dir);
+        
+            //Declaramos la ruta y nombre del archivo a generar
+        $filename = $dir.md5($url).'.png';
+        
+            //Parámetros de Configuración
+        
+        $tamaño = 10; //Tamaño de Pixel
+        $level = 'L'; //Precisión Baja
+        $framSize = 3; //Tamaño en blanco
+        $contenido = $url; //Texto
+        
+            //Enviamos los parámetros a la Función para generar código QR 
+        QRcode::png($contenido, $filename, $level, $tamaño, $framSize); 
+        
+            //Mostramos la imagen generada
+        return $dir.basename($filename);  
+    }
+
 
 }
 ?>

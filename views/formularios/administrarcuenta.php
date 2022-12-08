@@ -12,16 +12,16 @@
                             <a href="<?php echo "index.php?c=".seg::codificar("modifica")."&m=".seg::codificar("modifica") ?>" class="genric-btn danger-border radius">Actualizar mis datos</a>
                         </div> 
                         <div class="section-tittle text-center mb-40"> 
-                            <a href="<?php echo "index.php?c=".seg::codificar("aggcategoria")."&m=".seg::codificar("aggcategoria") ?>" class="genric-btn danger-border radius">Administrar categoría de platos</a>
+                            <a href="<?php echo "index.php?c=".seg::codificar("listadocategoria")."&m=".seg::codificar("listadocategoria") ?>" class="genric-btn danger-border radius">Administrar categoría de platos</a>
                         </div> 
                         <div class="section-tittle text-center mb-40"> 
-                            <a href="<?php echo "index.php?c=".seg::codificar("aggplato")."&m=".seg::codificar("aggplato") ?>" class="genric-btn danger-border radius">Administrar platos</a>
+                            <a href="<?php echo "index.php?c=".seg::codificar("listadoplato")."&m=".seg::codificar("mostrar") ?>" class="genric-btn danger-border radius">Administrar platos</a>
                         </div> 
                         <div class="section-tittle text-center mb-40"> 
                             <a href="<?php echo "index.php?c=".seg::codificar("menu")."&m=".seg::codificar("menu") ?>" class="genric-btn danger-border radius">Ver menú</a>
                         </div> 
                         <div class="section-tittle text-center mb-40"> 
-                            <a href="<?php echo "index.php?c=".seg::codificar("login")."&m=".seg::codificar("login") ?>" class="genric-btn danger-border radius">Ver código QR</a>
+                        <a href="<?php echo "index.php?c=".seg::codificar("registrar")."&m=".seg::codificar("vercodigoqr") ?>" class="genric-btn danger-border radius">Ver código QR</a>
                         </div> 
                     </div>
                 </div>  
