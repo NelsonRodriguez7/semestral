@@ -100,4 +100,26 @@ class listadoplato_controllers
         else
             header("location:" . "index.php?c=" . seg::codificar("mensaje") . "&m=" . seg::codificar("index") . "&msg=No se pudo eliminar, intentelo nuevamente!");
     }
+
+    public static function modificar(){
+        if (!isset($_SESSION["id_usuario"])) {
+            header("location:" . "index.php?c=" . seg::codificar("mensaje") . "&m=" . seg::codificar("index") . "&msg=Notiene acceso a esta pantalla, debe acceder para continuar");
+            exit();
+        }
+
+        $id = $_GET["id"];  
+        $obj = new plato();
+        $obj->setId($id);
+        $resultado = $obj->buscar_plato();
+        $title = "Modificar Plato| DS 7";
+        require_once("views/template/header.php");
+        require_once("views/template/nav.php");
+        require_once("views/menu/modificarplato.php");
+        require_once("views/template/footer.php");
+        }
+
+
+
+
+
 }

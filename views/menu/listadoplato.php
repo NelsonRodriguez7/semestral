@@ -33,8 +33,8 @@
                                 <td><?php echo $r->fecha_creacion ?></td>
                                 <td><?php echo $r->fecha_actualizacion ?></td>
                                     
-                                <td><a href="<?php echo "index.php?c=" . seg::codificar("plato") . "&m=" . seg::codificar("modificar") . "&id=" . $r->_id ?>"><button type="button" class="btn btn-primary btn-sm">Modificar</button></a>
-                            <a href="<?php echo "index.php?c=" . seg::codificar("plato") . "&m=" . seg::codificar("eliminar") . "&id=" . $r->_id ?>"><button type="button" class="btn btn-danger btn-sm">Eliminar</button></a>
+                            <td><a href="<?php echo "index.php?c=" . seg::codificar("listadoplato") . "&m=" . seg::codificar("modificar") . "&id=" . $r->_id ?>"><button type="button" class="btn btn-primary btn-sm">Modificar</button></a>
+                            <a href="<?php echo "index.php?c=" . seg::codificar("listadoplato") . "&m=" . seg::codificar("eliminar") . "&id=" . $r->_id ?>"><button type="button" class="btn btn-danger btn-sm">Eliminar</button></a>
                               </td>
 
                                </tr>

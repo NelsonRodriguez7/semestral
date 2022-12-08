@@ -25,7 +25,6 @@
                                     <form action=“destino.php" method="post" enctype="multipart/form-data">
                                     <input class="form-control" type="file" id="formFile" name="foto" accept="image/*">
                                     <BR>
-                                    <button type="submit" class="btn btn-primary">Subir</button>
                                     <form>
 
                                     <p><FONT COLOR="red">(*) Obligatorio</FONT></p>
@@ -39,7 +38,6 @@
                                     <input type="email" name="modificaurllogorest" placeholder="url del logo de imagen de fondo (800x800px)" onfocus="this.placeholder = ''" onblur="this.placeholder = 'url del logo de imagen de fondo (800x800px)'" required="" class="single-input">
                                     <form action=“destino.php" method="post" enctype="multipart/form-data">
                                     <input class="form-control" type="file" id="formFile" name="foto" accept="image/*">
-                                    <button type="submit" class="btn btn-primary">Subir</button>
                                     <form>
                                 </div>
                                 
