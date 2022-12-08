@@ -15,7 +15,7 @@
                             <a href="<?php echo "index.php?c=".seg::codificar("listadocategoria")."&m=".seg::codificar("listadocategoria") ?>" class="genric-btn danger-border radius">Administrar categoría de platos</a>
                         </div> 
                         <div class="section-tittle text-center mb-40"> 
-                            <a href="<?php echo "index.php?c=".seg::codificar("aggplato")."&m=".seg::codificar("aggplato") ?>" class="genric-btn danger-border radius">Administrar platos</a>
+                            <a href="<?php echo "index.php?c=".seg::codificar("listadoplato")."&m=".seg::codificar("mostrar") ?>" class="genric-btn danger-border radius">Administrar platos</a>
                         </div> 
                         <div class="section-tittle text-center mb-40"> 
                             <a href="<?php echo "index.php?c=".seg::codificar("menu")."&m=".seg::codificar("menu") ?>" class="genric-btn danger-border radius">Ver menú</a>
