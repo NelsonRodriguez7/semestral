@@ -17,11 +17,7 @@
                                     <h5>Nombre <FONT COLOR="red">(*) </FONT></h5>
                                     <input type="text" name="aggnombre" placeholder="Ejemplo: Pancakes" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ejemplo: Pancakes'" required="" class="single-input">
                                     <h5>Precio <FONT COLOR="red">(*) </FONT></h5>
-<<<<<<< HEAD
-                                    <input type="text" name="aggplatopprecio" placeholder="Ejemplo: 22.00" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ejemplo: 22.00'" required="" class="single-input">
-=======
                                     <input type="text" name="aggprecio" placeholder="Ejemplo: 22.00" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ejemplo: 22.00'" required="" class="single-input">
->>>>>>> dd63f38f43ea97e6ab34be2538fcab2ccb9ed515
                                     <h5>Categoría <FONT COLOR="red">(*) </FONT></h5>
                                     <select class="form-control" aria-label="Default select example" name="lstCategoria">
     
@@ -33,26 +29,13 @@
                                 </div>
                                 <div>
                                     <h5>Descripción <FONT COLOR="red">(*) </FONT></h5>
-<<<<<<< HEAD
-                                    <input type="text" name="aggplatodescripcioncat" placeholder="Descripción de la categoría" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Descripción de la categoría'" required="" class="single-input">
-=======
                                     <input type="text" name="aggdescrip" placeholder="Descripción de la categoría" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Descripción de la categoría'" required="" class="single-input">
->>>>>>> dd63f38f43ea97e6ab34be2538fcab2ccb9ed515
                                     <h5>Foto agregar<FONT COLOR="red">(*) </FONT></h5>
             
                                     <br>
-<<<<<<< HEAD
-                                    <form action=“destino.php" method="post" enctype="multipart/form-data">
-                                    <input class="form-control" type="file" id="formFile" name="foto" accept="image/*">
-                                    <br>
-                                    <button type="submit" name="file" id="custom-file-input" class="btn btn-primary">Subir</button>
-                                    <form>
-
-=======
                                     <input class="form-control" type="file" id="formFile" name="txtFoto" accept="image/*">
 													
                                     <input type="hidden" name="token" value="<?php echo seg::getToken() ?>">
->>>>>>> dd63f38f43ea97e6ab34be2538fcab2ccb9ed515
                                 </div>
                                 
                                 <!-- Single Select Box -->
