@@ -11,30 +11,37 @@
                 </div>  
                 <div class="row justify-content-center">
                     <div class="col">
-                        <form action="#">
+                        <form action="<?php echo "index.php?c=".seg::codificar("listadoplato")."&m=".seg::codificar("insertar") ?>"method="POST" enctype="multipart/form-data">
                             <div class="booking-wrap d-flex justify-content-between align-items-center">
                                 <div>
-                                    <h5>Descripción <FONT COLOR="red">(*) </FONT></h5>
-                                    <input type="text" name="aggplatodescripcion" placeholder="Ejemplo: Pancakes" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ejemplo: Pancakes'" required="" class="single-input">
+                                    <h5>Nombre <FONT COLOR="red">(*) </FONT></h5>
+                                    <input type="text" name="aggnombre" placeholder="Ejemplo: Pancakes" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ejemplo: Pancakes'" required="" class="single-input">
                                     <h5>Precio <FONT COLOR="red">(*) </FONT></h5>
-                                    <input type="password" name="aggplatopprecio" placeholder="Ejemplo: 22.00" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ejemplo: 22.00'" required="" class="single-input">
+                                    <input type="text" name="aggprecio" placeholder="Ejemplo: 22.00" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ejemplo: 22.00'" required="" class="single-input">
                                     <h5>Categoría <FONT COLOR="red">(*) </FONT></h5>
-                                    <input type="text" name="aggplatocategoria" placeholder="Ejemplo: Desayunos Ligth" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ejemplo: Desayunos Ligth'" required="" class="single-input">
+                                    <select class="form-control" aria-label="Default select example" name="lstCategoria">
+    
+                                    <?php foreach ($lista_categoria as $r) { ?>
+                                        <option value="<?php echo $r->_id ?>"><?php echo $r->nombre_categoria ?></option>
+										<?php } ?>
+									</select>
                                     <p><FONT COLOR="red">(*) Obligatorio</FONT></p>
                                 </div>
                                 <div>
                                     <h5>Descripción <FONT COLOR="red">(*) </FONT></h5>
-                                    <input type="email" name="aggplatodescripcioncat" placeholder="Descripción de la categoría" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Descripción de la categoría'" required="" class="single-input">
+                                    <input type="text" name="aggdescrip" placeholder="Descripción de la categoría" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Descripción de la categoría'" required="" class="single-input">
                                     <h5>Foto agregar<FONT COLOR="red">(*) </FONT></h5>
+            
+                                    <br>
+                                    <input class="form-control" type="file" id="formFile" name="txtFoto" accept="image/*">
                                     
-                                     <input type="password" name="aggplatofoto" placeholder="Nombre de foto" onfocus="this.placeholder = ''" onblur="this.placeholder = 'poner para sacar de biblioteca de archivos xd'" required="" class="single-input"> 
-                                    <br>
-                                    <form action=“destino.php" method="post" enctype="multipart/form-data">
-                                    <input class="form-control" type="file" id="formFile" name="foto" accept="image/*">
-                                    <br>
-                                    <button type="submit" class="btn btn-primary">Subir</button>
-                                    <form>
+									<input type="file" class="form-control" placeholder="Foto de Plato" name="txtFoto" accept="image/*" >
+									
 
+
+
+
+                                    <input type="hidden" name="token" value="<?php echo seg::getToken() ?>">
                                 </div>
                                 
                                 <!-- Single Select Box -->
