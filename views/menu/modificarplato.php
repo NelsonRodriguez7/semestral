@@ -5,7 +5,7 @@
                     <div class="cl-xl-7 col-lg-8 col-md-10">
                         <!-- Section Tittle -->
                         <div class="section-tittle text-center mb-40"> 
-                            <h2>Agregar Plato</h2>
+                            <h2>Modificar Plato</h2>
                         </div> 
                     </div>
                 </div>  
@@ -15,9 +15,9 @@
                             <div class="booking-wrap d-flex justify-content-between align-items-center">
                                 <div>
                                     <h5>Nombre <FONT COLOR="red">(*) </FONT></h5>
-                                    <input type="text" name="aggnombre" placeholder="Ejemplo: Pancakes" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ejemplo: Pancakes'" required="" class="single-input">
+                                    <input type="text" name="aggnombre" placeholder="Ejemplo: Pancakes" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ejemplo: Pancakes'" required="" class="single-input"value="<?php echo isset($resultado->nombre_plato) ? $resultado->nombre_plato : "" ?>">
                                     <h5>Precio <FONT COLOR="red">(*) </FONT></h5>
-                                    <input type="text" name="aggprecio" placeholder="Ejemplo: 22.00" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ejemplo: 22.00'" required="" class="single-input">
+                                    <input type="text" name="aggprecio" placeholder="Ejemplo: 22.00" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ejemplo: 22.00'" required="" class="single-input"value="<?php echo isset($resultado->precio_plato) ? $resultado->precio_plato : "" ?>">
                                     <h5>Categoría <FONT COLOR="red">(*) </FONT></h5>
                                     <select class="form-control" aria-label="Default select example" name="lstCategoria">
     
@@ -29,7 +29,7 @@
                                 </div>
                                 <div>
                                     <h5>Descripción <FONT COLOR="red">(*) </FONT></h5>
-                                    <input type="text" name="aggdescrip" placeholder="Descripción de la categoría" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Descripción de la categoría'" required="" class="single-input">
+                                    <input type="text" name="aggdescrip" placeholder="Descripción de la categoría" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Descripción de la categoría'" required="" class="single-input"value="<?php echo isset($resultado->descripcion_plato) ? $resultado->descripcion_plato : "" ?>">
                                     <h5>Foto agregar<FONT COLOR="red">(*) </FONT></h5>
             
                                     <br>

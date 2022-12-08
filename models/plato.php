@@ -46,6 +46,15 @@ class plato
         }
     }
 
+    public function buscar_plato()
+    {
+        $conexion = bd::connection();
+        $coleccion = $conexion->plato;
+        $resultado = $coleccion->find(["_id" => new MongoDB\BSON\ObjectId($this->id)]);
+        foreach ($resultado as $r)
+            return $r;
+    }
+
     public function actualizar()
     {
         $conexion = bd::connection();
