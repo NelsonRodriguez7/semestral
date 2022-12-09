@@ -2,6 +2,8 @@
     require_once("models/usuarios_models.php");
     require_once("utils/seg.php");
     require_once("utils/utils.php");
+    require_once("models/plato.php");
+    require_once("models/categoria_platos.php");
     class registrar_controllers{
         public static function registrar(){
             $imprimir_error = "";
@@ -63,7 +65,7 @@
                 exit();
             }
             
-            $url= $_SERVER["REQUEST_SCHEME"] . "://" . $_SERVER["SERVER_NAME"] . "/index.php?c=" . seg::codificar("registrar") . "&m=" . seg::codificar("ver_menu") . "&id=" . $_SESSION["usuario"] ;
+            $url= $_SERVER["REQUEST_SCHEME"] . "://" . $_SERVER["SERVER_NAME"] . "/index.php?c=" . seg::codificar("registrar") . "&m=" . seg::codificar("ver_menu") . "&id=" . $_SESSION["id_usuario"] ;  
             $title="Qr";
             require_once("views/template/header.php");
             require_once("views/template/nav.php");
@@ -73,11 +75,28 @@
 
         public static function ver_menu()
         {
-            $id_usuario = $_GET["id"];
-           
+
+        
+
+            $id=$_GET["id"];
+            $obj = new categoria_plato();
+            $obj->set_id_usuario($id);
+            $listar_categoria = $obj->listar_categorias();
+
+
+            $obj = new plato();
+            $obj->set_id_usuario($id);
+            $listar_plato = $obj->listar_platos();
+
+            $title = "Menú | DS 7";
             require_once("views/template/header.php");
+            require_once("views/template/nav.php");
             require_once("views/menu/menu.php");
             require_once("views/template/footer.php");
+
+          
+           
+          
         }
 
 

@@ -16,12 +16,18 @@
                     <div class="row justify-content-center">
                         <div class="properties__button">
                             <!--Nav Button  -->
-                            <nav>                                                                         
+                            <nav>   
+
                                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
                                     
-                                <?php foreach ($lista_categoria as $r) { ?>
+                                <?php var_dump($listar_plato) ?>
+                               
+                               
+
+                                <?php foreach ($listar_categoria as $r) { ?>
                                     <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true"><?php echo $r->nombre_categoria ?></a>
-										<?php } ?>
+                                    <?php var_dump($r->nombre_categoria) ?>
+                                    <?php } ?>
                                    
        
                                 </div>
