@@ -119,6 +119,25 @@
         return [];
         }
 
+        public function actualizarcontra(){
+            $conexion = bd::connection();
+            $coleccion = $conexion->usuario;
+            try {
+                $this->salt = sha1(random_bytes(10));
+                $this->password = sha1($this->password . "|" . $this->salt);
+                $resultados = $coleccion->updateOne(
+                    ["_id" => new MongoDB\BSON\ObjectId($this->id)],
+                    ['$set' => [
+                        "password" => $this->password,
+                        "salt" => $this->salt
+                    ]]
+                );
+                return $resultados->getModifiedCount();
+            } catch (Exception $e) {
+                return 0;
+            }
+        }
+
         public function getId()
         {
             return $this->id;

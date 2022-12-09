@@ -22,7 +22,13 @@
                         </div> 
                         <div class="section-tittle text-center mb-40"> 
                         <a href="<?php echo "index.php?c=".seg::codificar("registrar")."&m=".seg::codificar("vercodigoqr") ?>" class="genric-btn danger-border radius">Ver código QR</a>
-                        </div> 
+                        </div>
+                        <div class="section-tittle text-center mb-40"> 
+                        <a href="<?php echo "index.php?c=".seg::codificar("cambiarcontra")."&m=".seg::codificar("cambiarcontra") ?>" class="genric-btn danger-border radius">Cambiar Contraseña</a>
+                        </div>
+                        <div class="section-tittle text-center mb-40"> 
+                        <a href="<?php echo "index.php?c=".seg::codificar("registrar")."&m=".seg::codificar("vercodigoqr") ?>" class="genric-btn danger-border radius">Ver Pago</a>
+                        </div>   
                     </div>
                 </div>  
             </div>

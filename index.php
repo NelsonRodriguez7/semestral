@@ -11,6 +11,7 @@
     require_once("controllers/pagos_paypal_controllers.php");
     require_once("controllers/listadocategoria_controllers.php");
     require_once("controllers/listadoplato_controllers.php");
+    require_once("controllers/cambiarcontra_controllers.php");
     require_once("utils/seg.php");
     require_once("utils/utils.php");
 
