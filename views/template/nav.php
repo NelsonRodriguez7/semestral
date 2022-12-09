@@ -29,23 +29,18 @@
                                         <nav> 
                                             <ul id="navigation">
                                                 <li><a href="<?php echo "index.php?c=".seg::codificar("principal")."&m=".seg::codificar("index") ?>">Home</a></li>
-                                                <li><a href="#">Formulario</a>
-                                                    <ul class="submenu">
-                                                        <li><a href="<?php echo "index.php?c=".seg::codificar("login")."&m=".seg::codificar("login") ?>">Login</a></li>
-                                                        <li><a href="<?php echo "index.php?c=".seg::codificar("registrar")."&m=".seg::codificar("registrar") ?>">Registrarse</a></li>
-                                                        <li><a href="<?php echo "index.php?c=".seg::codificar("administrar")."&m=".seg::codificar("administrar") ?>">Administrar cuenta</a></li>
-                                                        <li><a href="<?php echo "index.php?c=".seg::codificar("modifica")."&m=".seg::codificar("modifica") ?>">Modifica</a></li>
-                                                        <li><a href="<?php echo "index.php?c=".seg::codificar("aggcategoria")."&m=".seg::codificar("aggcategoria") ?>">Agregar Categoria</a></li>
-                                                        <li><a href="<?php echo "index.php?c=".seg::codificar("listadoplato")."&m=".seg::codificar("mostrar") ?>">Agregar Plato</a></li>
-                                                      
-                                                    </ul>
-                                                </li>
-                                                <li><a href="#">Menu</a></li>
-                                                <li><a href="#">Elementos</a>
-                                                    <ul class="submenu">
-                                                        <li><a href="elements.html">Element</a></li>
-                                                    </ul>
-                                                </li>
+                                                <?php if(isset($_SESSION["usuario"])) {?>
+                                                
+                                                <?php }else{?>
+                                                    <li><a href="<?php echo "index.php?c=".seg::codificar("registrar")."&m=".seg::codificar("registrar") ?>">Registrarte</a>
+                                                    </li>
+                                                <?php }?>
+                                                
+                                                <?php if(isset($_SESSION["monto_pago"]) !=0) { ?>
+                                                <li><a href="<?php echo "index.php?c=".seg::codificar("administrar")."&m=".seg::codificar("administrar") ?>">Administrar Datos</a></li>
+                                                <?php }else{?>
+                                                
+                                                <?php }?>
                                             </ul>
                                         </nav>
                                     </div>

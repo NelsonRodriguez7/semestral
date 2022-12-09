@@ -3,6 +3,25 @@
         <div class="slider-area ">
             <div class="slider-active">
                 <!-- Single Slider -->
+                <?php if(isset($_SESSION["monto_pago"]) !=0) { ?>
+                <div class="single-slider slider-height d-flex align-items-center">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-9 col-lg-9 col-md-9">
+                                <div class="hero__caption">
+                                    <span data-animation="fadeInLeft" data-delay=".2s">Bienvenido <?php echo $_SESSION["nombre_contacto"] ?></span>
+                                    <h1 data-animation="fadeInLeft" data-delay=".4s">Ya tu cuenta esta lista para que subas tus datos</h1>
+                                    <p data-animation="fadeInLeft" data-delay=".6s">Gracias por preferirnos a continuacion en el boton de abajo puedes administrar tu cuenta en donde podas agregar categorias, platos y mucho más.</p>
+                                    <!-- Hero-btn -->
+                                    <div class="hero__btn">
+                                    <a href="<?php echo "index.php?c=".seg::codificar("administrar")."&m=".seg::codificar("administrar") ?>" class="border-btn header-btn">Administra tu cuenta</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <?php }else{?>
                 <div class="single-slider slider-height d-flex align-items-center">
                     <div class="container">
                         <div class="row">
@@ -67,6 +86,7 @@
                     </div>
                 </div>
             </div>
+            <?php }?>
         </div>
         <!-- slider Area End-->
         <!--? About Area Start -->
