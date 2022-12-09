@@ -10,7 +10,7 @@ class listadoplato_controllers
     {
         $title = "Mostrar Plato | DS 7";
         if (!isset($_SESSION["id_usuario"])) {
-            header("location:" . "index.php?c=" . seg::codificar("principal") . "&m=" . seg::codificar("mensaje") . "&msg=Notiene acceso a esta pantalla, debe acceder para continuar");
+            header("location:" . "index.php?c=" . seg::codificar("mensaje") . "&m=" . seg::codificar("index") . "&msg=No tiene acceso a esta pantalla, debe acceder para continuar");
             exit();
         }
         if (isset($_GET["msg"])) $msg=$_GET["msg"];
@@ -129,7 +129,7 @@ class listadoplato_controllers
                 $nombre_plato = filter_var($_POST["nombre_plato"], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
                 $descripcion_plato = filter_var($_POST["descripcion_plato"], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
                 $precio_plato = filter_var($_POST["precio_plato"], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-
+                $foto = utils::subir_archivo($_FILES["txtFoto"]["tmp_name"],$_FILES["txtFoto"]["name"], "uploads");
                 
              
                 $id =  $_POST["_id"];
@@ -140,6 +140,8 @@ class listadoplato_controllers
                 $obj->setPrecio_plato($precio_plato);
                 $obj->setDescripcion_plato($descripcion_plato);
                 $obj->set_id_categoria($id_categoria);
+                $obj->setFoto_plato($foto);
+              
 
                 $obj->set_id_usuario($_SESSION["id_usuario"]);
                 $resultados = $obj->actualizar();

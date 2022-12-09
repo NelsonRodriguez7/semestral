@@ -18,7 +18,10 @@
                             <a href="<?php echo "index.php?c=".seg::codificar("listadoplato")."&m=".seg::codificar("mostrar") ?>" class="genric-btn danger-border radius">Administrar platos</a>
                         </div> 
                         <div class="section-tittle text-center mb-40"> 
-                            <a href="<?php echo "index.php?c=".seg::codificar("menu")."&m=".seg::codificar("menu") ?>" class="genric-btn danger-border radius">Ver menú</a>
+                            <a href="<?php echo "index.php?c=".seg::codificar("registrar")."&m=".seg::codificar("ver_menu") ?>" class="genric-btn danger-border radius">Ver menú</a>
+                        </div>
+                        <div class="section-tittle text-center mb-40"> 
+                            <a href="<?php echo "index.php?c=".seg::codificar("menu")."&m=".seg::codificar("menu") ?>" class="genric-btn danger-border radius">Ver menú 2</a>
                         </div> 
                         <div class="section-tittle text-center mb-40"> 
                         <a href="<?php echo "index.php?c=".seg::codificar("registrar")."&m=".seg::codificar("vercodigoqr") ?>" class="genric-btn danger-border radius">Ver código QR</a>

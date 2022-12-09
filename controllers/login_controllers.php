@@ -11,6 +11,14 @@
             require_once("views/formularios/login.php");
             require_once("views/template/footer.php");
         }
+        public static function login2(){
+            $msg = isset($_GET["msg"])?$_GET["msg"]:"";
+            $title = "Login | DS 7";
+            require_once("views/template/header.php");
+            require_once("views/template/nav.php");
+            require_once("views/formularios/login2.php");
+            require_once("views/template/footer.php");
+        }
 
         public static function validar_usuario()
         {
