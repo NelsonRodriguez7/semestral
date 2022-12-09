@@ -10,7 +10,7 @@ class listadoplato_controllers
     {
         $title = "Mostrar Plato | DS 7";
         if (!isset($_SESSION["id_usuario"])) {
-            header("location:" . "index.php?c=" . seg::codificar("principal") . "&m=" . seg::codificar("mensaje") . "&msg=Notiene acceso a esta pantalla, debe acceder para continuar");
+            header("location:" . "index.php?c=" . seg::codificar("mensaje") . "&m=" . seg::codificar("index") . "&msg=No tiene acceso a esta pantalla, debe acceder para continuar");
             exit();
         }
         if (isset($_GET["msg"])) $msg=$_GET["msg"];

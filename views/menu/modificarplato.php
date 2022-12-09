@@ -41,7 +41,7 @@
                                 
                                 <!-- Single Select Box -->
                                 <div class="single-select-box mb-30">
-                                    <button class="btn select-btn">Agregar</button>
+                                    <button class="btn select-btn">Modificar</button>
                                 </div>
                             </div>
                         </form>

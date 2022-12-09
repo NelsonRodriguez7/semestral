@@ -13,6 +13,14 @@
             require_once("views/formularios/registrar.php");
             require_once("views/template/footer.php");
         }
+        public static function registrar2(){
+            $imprimir_error = "";
+            $title = "Registrar Cuenta| DS 7";
+            require_once("views/template/header.php");
+            require_once("views/template/nav.php");
+            require_once("views/formularios/registrar2.php");
+            require_once("views/template/footer.php");
+        }
 
         public static function insertar()
         {
