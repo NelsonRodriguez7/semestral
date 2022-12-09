@@ -1,6 +1,7 @@
 <?php 
    require_once("utils/seg.php");
-
+   require_once("models/categoria_platos.php");
+   require_once("models/plato.php");
     class menu_controllers{
         public static function menu(){
             $id=$_GET["id"];
