@@ -129,7 +129,7 @@ class listadoplato_controllers
                 $nombre_plato = filter_var($_POST["nombre_plato"], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
                 $descripcion_plato = filter_var($_POST["descripcion_plato"], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
                 $precio_plato = filter_var($_POST["precio_plato"], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-
+                $foto = utils::subir_archivo($_FILES["txtFoto"]["tmp_name"],$_FILES["txtFoto"]["name"], "uploads");
                 
              
                 $id =  $_POST["_id"];
@@ -140,6 +140,8 @@ class listadoplato_controllers
                 $obj->setPrecio_plato($precio_plato);
                 $obj->setDescripcion_plato($descripcion_plato);
                 $obj->set_id_categoria($id_categoria);
+                $obj->setFoto_plato($foto);
+              
 
                 $obj->set_id_usuario($_SESSION["id_usuario"]);
                 $resultados = $obj->actualizar();
