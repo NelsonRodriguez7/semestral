@@ -18,7 +18,7 @@ class listadoplato_controllers
         $obj = new plato();
         $obj->set_id_usuario($_SESSION["id_usuario"]);
         $resultado = $obj->listar_platos();
-        $vrandom= "algoadentro";
+        
 
         require_once("views/template/header.php");
         require_once("views/template/nav.php");
