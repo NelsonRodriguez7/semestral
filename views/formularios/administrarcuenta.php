@@ -6,7 +6,7 @@
                         <!-- Section Tittle aaaaaaaaaaaaaaaaaaaaaaaaa-->
                         <div class="section-tittle text-center mb-40"> 
                             <h2>Administrar Cuenta</h2>
-                            <span>Hola!</span>
+                            <span>Hola <?php echo $_SESSION["nombre_contacto"] ?></span>
                         </div> 
                         <div class="section-tittle text-center mb-40"> 
                             <a href="<?php echo "index.php?c=".seg::codificar("modifica")."&m=".seg::codificar("modifica") ?>" class="genric-btn danger-border radius">Actualizar mis datos</a>
@@ -18,7 +18,7 @@
                             <a href="<?php echo "index.php?c=".seg::codificar("listadoplato")."&m=".seg::codificar("mostrar") ?>" class="genric-btn danger-border radius">Administrar platos</a>
                         </div> 
                         <div class="section-tittle text-center mb-40"> 
-                            <a href="<?php echo "index.php?c=".seg::codificar("registrar")."&m=".seg::codificar("ver_menu") ?>" class="genric-btn danger-border radius">Ver menú</a>
+                            <a href="<?php echo "index.php?c=".seg::codificar("registrar")."&m=".seg::codificar("ver_menu"). "&id=" . $_SESSION["id_usuario"] ?>" class="genric-btn danger-border radius">Ver menú</a>
                         </div>
                         <div class="section-tittle text-center mb-40"> 
                             <a href="<?php echo "index.php?c=".seg::codificar("menu")."&m=".seg::codificar("menu") ?>" class="genric-btn danger-border radius">Ver menú 2</a>
