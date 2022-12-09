@@ -7,6 +7,10 @@ class pagos_paypal_controllers
     {
         $pagos = new pagos_paypal();
         $pagos->registrar($_POST);
+
+        if($pagos > 0){
+            pagos_paypal_controllers::retorno();
+        }
     }
 
     public static function retorno()
