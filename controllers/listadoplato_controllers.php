@@ -61,7 +61,7 @@ class listadoplato_controllers
             $precio="";
             
                       
-            
+
             $id_categoria = $_POST["lstCategoria"];
                 $nombre = filter_var($_POST["aggnombre"], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
                 $descripcion = filter_var($_POST["aggdescrip"], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
@@ -106,7 +106,9 @@ class listadoplato_controllers
             header("location:" . "index.php?c=" . seg::codificar("mensaje") . "&m=" . seg::codificar("index") . "&msg=Notiene acceso a esta pantalla, debe acceder para continuar");
             exit();
         }
-
+        $obj = new categoria_plato();
+        $obj->set_id_usuario($_SESSION["id_usuario"]);
+        $lista_categoria = $obj->listar_categorias();
         $id = $_GET["id"];  
         $obj = new plato();
         $obj->setId($id);
@@ -127,6 +129,7 @@ class listadoplato_controllers
                 $nombre_plato = filter_var($_POST["nombre_plato"], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
                 $descripcion_plato = filter_var($_POST["descripcion_plato"], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
                 $precio_plato = filter_var($_POST["precio_plato"], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+
                 
              
                 $id =  $_POST["_id"];
@@ -136,6 +139,7 @@ class listadoplato_controllers
                 $obj->setnombre_plato($nombre_plato);
                 $obj->setPrecio_plato($precio_plato);
                 $obj->setDescripcion_plato($descripcion_plato);
+                $obj->set_id_categoria($id_categoria);
 
                 $obj->set_id_usuario($_SESSION["id_usuario"]);
                 $resultados = $obj->actualizar();

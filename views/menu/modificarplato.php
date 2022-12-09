@@ -29,11 +29,7 @@
                                 </div>
                                 <div>
                                     <h5>Descripción <FONT COLOR="red">(*) </FONT></h5>
-                                    <input type="text" name="descripcion_plato" placeholder="Descripción de la categoría" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Descripción de la categoría'" required="" class="single-input"value="<?php echo isset($resultado->descripcion_plato) ? $resultado->descripcion_plato : "" ?>">
-                                    <h5>Foto agregar<FONT COLOR="red">(*) </FONT></h5>
-            
-                                    <br>
-                                    <input class="form-control" type="file" id="formFile" name="txtFoto" accept="image/*">
+                                    <input type="text" name="descripcion_plato" placeholder="Descripción de la categoría" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Descripción de la categoría'" required="" class="single-input"value="<?php echo isset($resultado->descripcion_plato) ? $resultado->descripcion_plato : "" ?>">                              
                                     <input type="hidden" name="_id" value="<?php echo $id ?>">				
                                     <input type="hidden" name="token" value="<?php echo seg::getToken() ?>">
                                 </div>
