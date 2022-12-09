@@ -23,6 +23,8 @@ class utils
         else
             return null;
     }
+
+
     public static function generarqr($url)
     {
         require_once("libs/codigo_qr/qrlib.php");

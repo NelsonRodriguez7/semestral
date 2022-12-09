@@ -118,6 +118,34 @@ class listadoplato_controllers
         require_once("views/template/footer.php");
         }
 
+        public static function actualizar(){
+            if ($_POST) {
+                if (!isset($_POST["token"]) ||  !seg::validaSesion($_POST["token"])) {
+                    echo "Acceso restringido";
+                    exit();
+                }
+                $nombre_plato = filter_var($_POST["nombre_plato"], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+                $descripcion_plato = filter_var($_POST["descripcion_plato"], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+                $precio_plato = filter_var($_POST["precio_plato"], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+                
+             
+                $id =  $_POST["_id"];
+                $id = filter_var($id, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+                $obj = new plato();
+                $obj->setId($id);
+                $obj->setnombre_plato($nombre_plato);
+                $obj->setPrecio_plato($precio_plato);
+                $obj->setDescripcion_plato($descripcion_plato);
+
+                $obj->set_id_usuario($_SESSION["id_usuario"]);
+                $resultados = $obj->actualizar();
+                if (isset($resultados)) {
+                    header("location:" . "index.php?c=" . seg::codificar("mensaje") . "&m=" . seg::codificar("index") . "&msg=Se ha registrado satisfactoriamente la categoria ");
+                } else
+                    header("location:" . "index.php?c=" . seg::codificar("mensaje") . "&m=" . seg::codificar("index") . "&msg=No se pudo registrar, intentelo nuevamente!");
+                
+            }
+        }
 
 
 
