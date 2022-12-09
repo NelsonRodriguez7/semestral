@@ -1,5 +1,4 @@
-
-    <main>
+ <main>
         <!--? gallery Products Start -->
         <section class="gallery-area fix ">
             <!-- Gallery Top Start -->
