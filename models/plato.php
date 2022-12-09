@@ -66,6 +66,7 @@ class plato
                     "nombre_plato" => $this->nombre_plato,
                     "descripcion_plato" => $this->descripcion_plato,
                     "precio_plato" => $this->precio_plato,
+                    "foto_plato" => $this->foto_plato,
                     "_id_categoria" => $this->_id_categoria,
                     "_id_usuario" => $this->_id_usuario,
                     "fecha_actualizacion" => date("Y-m-d")
