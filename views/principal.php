@@ -3,8 +3,92 @@
         <div class="slider-area ">
             <div class="slider-active">
                 <!-- Single Slider -->
-                <?php if(isset($_SESSION["monto_pago"]) !=0) { ?>
+                <?php if(!isset($_SESSION["id_usuario"])) { ?>
                 <div class="single-slider slider-height d-flex align-items-center">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-9 col-lg-9 col-md-9">
+                                <div class="hero__caption">
+                                    <span data-animation="fadeInLeft" data-delay=".2s">Innova tu restaurante</span>
+                                    <h1 data-animation="fadeInLeft" data-delay=".4s">Tenemos muchas herramientas que ofrecerte</h1>
+                                    <p data-animation="fadeInLeft" data-delay=".6s">Inicia Sesion para tener acceso a ellas, gracias por visitarnos y esperamos ser de tu ayuda</p>
+                                    <!-- Hero-btn -->
+                                    <div class="hero__btn">
+                                    <a href="<?php echo "index.php?c=".seg::codificar("login")."&m=".seg::codificar("login") ?>" class="border-btn header-btn">Inicia Sesion</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <?php }else{?>
+                <?php if ($_SESSION["monto_pago"] == 0) { ?>
+                            <div class="single-slider slider-height d-flex align-items-center">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-xl-9 col-lg-9 col-md-9">
+                                            <div class="hero__caption">
+                                                <span data-animation="fadeInLeft" data-delay=".2s">Descubre tu nueva pagina <?php echo $_SESSION["usuario"] ?></span>
+                                                <h1 data-animation="fadeInLeft" data-delay=".4s">Crea tu menu de restaurate en un QR</h1>
+                                                <p data-animation="fadeInLeft" data-delay=".6s">Utiliza todas nuestras herramientras para llegar a más personas y descubre como la implementacion de un QR para mostrar tu menu llama la atención de tu clientes.</p>
+                                                <!-- Hero-btn -->
+                                                <div class="hero__btn">
+                                                <form target="paypal" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="POST">
+                                                    <input type="hidden" name="cmd" value="_xclick">
+                                                    <input type="hidden" name="business" value="sb-uecs315353654@business.example.com">
+                                                    <input type="hidden" name="item_name" value="Suscripción Pago único de Grupo4.com">
+                                                    <input type="hidden" name="item_number" value="cod00001">
+                                                    <input type="hidden" name="amount" value="49.99">
+                                                    <input type="hidden" name="tax" value="0">
+                                                    <input type="hidden" name="quantity" value="1">
+                                                    <input type="hidden" name="currency_code" value="USD">
+                                                    <input type="hidden" name="country" value="PA">
+                                                    <input type="hidden" name="return" value="<?php echo  $_SERVER["REQUEST_SCHEME"] . "://" . $_SERVER["SERVER_NAME"] . "/index.php?c=" . seg::codificar("pagos_paypal") . "&m=" . seg::codificar("registar_notificacion") ?>">
+                                                    <input type="hidden" name="notify_url" value="<?php echo  $_SERVER["REQUEST_SCHEME"] . "://" . $_SERVER["SERVER_NAME"] . "/index.php?c=" . seg::codificar("pagos_paypal") . "&m=" . seg::codificar("registar_notificacion") ?>"> 
+                                                    <input type="hidden" name="cancel_return" value="<?php echo  $_SERVER["REQUEST_SCHEME"] . "://" . $_SERVER["SERVER_NAME"] . "/index.php?c=" . seg::codificar("pagos_paypal") . "&m=" . seg::codificar("cancelar") ?>">
+                                                    <input type="submit" name="submit" value="Pagar con Paypal $49.99 " class="btn hero-btn"  data-animation="fadeInLeft" data-delay=".8s">
+                                                </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Single Slider -->
+                            <div class="single-slider slider-height d-flex align-items-center">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-xl-9 col-lg-9 col-md-9">
+                                            <div class="hero__caption">
+                                                <span data-animation="fadeInLeft" data-delay=".2s">Descrubre tu nueva pagina</span>
+                                                <h1 data-animation="fadeInLeft" data-delay=".4s">Un solo pago para toda la vida</h1>
+                                                <p data-animation="fadeInLeft" data-delay=".6s">Te ofrecemos un menu qr donde puedes tener todos tus platilos con imagenes, precio, descripcion; Ademas de subir tu logo y banner</p>
+                                                <!-- Hero-btn -->
+                                                <div class="hero__btn">
+                                                <form target="paypal" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="POST">
+                                                    <input type="hidden" name="cmd" value="_xclick">
+                                                    <input type="hidden" name="business" value="sb-uecs315353654@business.example.com">
+                                                    <input type="hidden" name="item_name" value="Suscripción Pago único de Grupo4.com">
+                                                    <input type="hidden" name="item_number" value="cod00001">
+                                                    <input type="hidden" name="amount" value="49.99">
+                                                    <input type="hidden" name="tax" value="0">
+                                                    <input type="hidden" name="quantity" value="1">
+                                                    <input type="hidden" name="currency_code" value="USD">
+                                                    <input type="hidden" name="country" value="PA">
+                                                    <input type="hidden" name="return" value="<?php echo  $_SERVER["REQUEST_SCHEME"] . "://" . $_SERVER["SERVER_NAME"] . "/index.php?c=" . seg::codificar("pagos_paypal") . "&m=" . seg::codificar("registar_notificacion") ?>">
+                                                    <input type="hidden" name="notify_url" value="<?php echo  $_SERVER["REQUEST_SCHEME"] . "://" . $_SERVER["SERVER_NAME"] . "/index.php?c=" . seg::codificar("pagos_paypal") . "&m=" . seg::codificar("registar_notificacion") ?>"> 
+                                                    <input type="hidden" name="cancel_return" value="<?php echo  $_SERVER["REQUEST_SCHEME"] . "://" . $_SERVER["SERVER_NAME"] . "/index.php?c=" . seg::codificar("pagos_paypal") . "&m=" . seg::codificar("cancelar") ?>">
+                                                    <input type="submit" name="submit" value="Pagar con Paypal $49.99 " class="btn hero-btn"  data-animation="fadeInLeft" data-delay=".8s">
+                                                </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                <?php }else{?>
+                    <div class="single-slider slider-height d-flex align-items-center">
                     <div class="container">
                         <div class="row">
                             <div class="col-xl-9 col-lg-9 col-md-9">
@@ -20,73 +104,11 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <?php }else{?>
-                <div class="single-slider slider-height d-flex align-items-center">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-xl-9 col-lg-9 col-md-9">
-                                <div class="hero__caption">
-                                    <span data-animation="fadeInLeft" data-delay=".2s">Descubre tu nueva pagina</span>
-                                    <h1 data-animation="fadeInLeft" data-delay=".4s">Crea tu menu de restaurate en un QR</h1>
-                                    <p data-animation="fadeInLeft" data-delay=".6s">Utiliza todas nuestras herramientras para llegar a más personas y descubre como la implementacion de un QR para mostrar tu menu llama la atención de tu clientes.</p>
-                                    <!-- Hero-btn -->
-                                    <div class="hero__btn">
-                                    <form target="paypal" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="POST">
-                                        <input type="hidden" name="cmd" value="_xclick">
-                                        <input type="hidden" name="business" value="sb-uecs315353654@business.example.com">
-                                        <input type="hidden" name="item_name" value="Suscripción Pago único de Grupo4.com">
-                                        <input type="hidden" name="item_number" value="cod00001">
-                                        <input type="hidden" name="amount" value="49.99">
-                                        <input type="hidden" name="tax" value="0">
-                                        <input type="hidden" name="quantity" value="1">
-                                        <input type="hidden" name="currency_code" value="USD">
-                                        <input type="hidden" name="country" value="PA">
-                                        <input type="hidden" name="return" value="<?php echo  $_SERVER["REQUEST_SCHEME"] . "://" . $_SERVER["SERVER_NAME"] . "/index.php?c=" . seg::codificar("pagos_paypal") . "&m=" . seg::codificar("registar_notificacion") ?>">
-                                        <input type="hidden" name="notify_url" value="<?php echo  $_SERVER["REQUEST_SCHEME"] . "://" . $_SERVER["SERVER_NAME"] . "/index.php?c=" . seg::codificar("pagos_paypal") . "&m=" . seg::codificar("registar_notificacion") ?>"> 
-                                        <input type="hidden" name="cancel_return" value="<?php echo  $_SERVER["REQUEST_SCHEME"] . "://" . $_SERVER["SERVER_NAME"] . "/index.php?c=" . seg::codificar("pagos_paypal") . "&m=" . seg::codificar("cancelar") ?>">
-                                        <input type="submit" name="submit" value="Pagar con Paypal $49.99 " class="btn hero-btn"  data-animation="fadeInLeft" data-delay=".8s">
-                                    </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
-                </div>
-                <!-- Single Slider -->
-                <div class="single-slider slider-height d-flex align-items-center">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-xl-9 col-lg-9 col-md-9">
-                                <div class="hero__caption">
-                                    <span data-animation="fadeInLeft" data-delay=".2s">Descrubre tu nueva pagina</span>
-                                    <h1 data-animation="fadeInLeft" data-delay=".4s">Un solo pago para toda la vida</h1>
-                                    <p data-animation="fadeInLeft" data-delay=".6s">Te ofrecemos un menu qr donde puedes tener todos tus platilos con imagenes, precio, descripcion; Ademas de subir tu logo y banner</p>
-                                    <!-- Hero-btn -->
-                                    <div class="hero__btn">
-                                    <form target="paypal" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="POST">
-                                        <input type="hidden" name="cmd" value="_xclick">
-                                        <input type="hidden" name="business" value="sb-uecs315353654@business.example.com">
-                                        <input type="hidden" name="item_name" value="Suscripción Pago único de Grupo4.com">
-                                        <input type="hidden" name="item_number" value="cod00001">
-                                        <input type="hidden" name="amount" value="49.99">
-                                        <input type="hidden" name="tax" value="0">
-                                        <input type="hidden" name="quantity" value="1">
-                                        <input type="hidden" name="currency_code" value="USD">
-                                        <input type="hidden" name="country" value="PA">
-                                        <input type="hidden" name="return" value="<?php echo  $_SERVER["REQUEST_SCHEME"] . "://" . $_SERVER["SERVER_NAME"] . "/index.php?c=" . seg::codificar("pagos_paypal") . "&m=" . seg::codificar("registar_notificacion") ?>">
-                                        <input type="hidden" name="notify_url" value="<?php echo  $_SERVER["REQUEST_SCHEME"] . "://" . $_SERVER["SERVER_NAME"] . "/index.php?c=" . seg::codificar("pagos_paypal") . "&m=" . seg::codificar("registar_notificacion") ?>"> 
-                                        <input type="hidden" name="cancel_return" value="<?php echo  $_SERVER["REQUEST_SCHEME"] . "://" . $_SERVER["SERVER_NAME"] . "/index.php?c=" . seg::codificar("pagos_paypal") . "&m=" . seg::codificar("cancelar") ?>">
-                                        <input type="submit" name="submit" value="Pagar con Paypal $49.99 " class="btn hero-btn"  data-animation="fadeInLeft" data-delay=".8s">
-                                    </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <?php }?>
+                <?php } ?>
+                <?php } ?>
+                
+            
         </div>
         <!-- slider Area End-->
         <!--? About Area Start -->

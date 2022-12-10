@@ -35,12 +35,17 @@
                                                     <li><a href="<?php echo "index.php?c=".seg::codificar("registrar")."&m=".seg::codificar("registrar") ?>">Registrarte</a>
                                                     </li>
                                                 <?php }?>
+
+                                                <?php if(!isset($_SESSION["id_usuario"])) { ?>
                                                 
-                                                <?php if(isset($_SESSION["monto_pago"]) !=0) { ?>
-                                                <li><a href="<?php echo "index.php?c=".seg::codificar("administrar")."&m=".seg::codificar("administrar") ?>">Administrar Datos</a></li>
                                                 <?php }else{?>
+                                                <?php if($_SESSION["monto_pago"] == 0) { ?>
                                                 
-                                                <?php }?>
+                                                <?php }else{?>
+                                                    <li><a href="<?php echo "index.php?c=".seg::codificar("administrar")."&m=".seg::codificar("administrar") ?>">Administrar Datos</a></li>
+                                                <?php }?> 
+                                                <?php }?> 
+                                               
                                             </ul>
                                         </nav>
                                     </div>

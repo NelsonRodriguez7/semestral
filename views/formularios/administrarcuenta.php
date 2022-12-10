@@ -20,9 +20,7 @@
                         <div class="section-tittle text-center mb-40"> 
                             <a href="<?php echo "index.php?c=".seg::codificar("registrar")."&m=".seg::codificar("ver_menu"). "&id=" . $_SESSION["id_usuario"] ?>" class="genric-btn danger-border radius">Ver menú</a>
                         </div>
-                        <div class="section-tittle text-center mb-40"> 
-                            <a href="<?php echo "index.php?c=".seg::codificar("menu")."&m=".seg::codificar("menu") ?>" class="genric-btn danger-border radius">Ver menú 2</a>
-                        </div> 
+                        
                         <div class="section-tittle text-center mb-40"> 
                         <a href="<?php echo "index.php?c=".seg::codificar("registrar")."&m=".seg::codificar("vercodigoqr") ?>" class="genric-btn danger-border radius">Ver código QR</a>
                         </div>
@@ -30,7 +28,7 @@
                         <a href="<?php echo "index.php?c=".seg::codificar("cambiarcontra")."&m=".seg::codificar("cambiarcontra") ?>" class="genric-btn danger-border radius">Cambiar Contraseña</a>
                         </div>
                         <div class="section-tittle text-center mb-40"> 
-                        <a href="<?php echo "index.php?c=".seg::codificar("registrar")."&m=".seg::codificar("vercodigoqr") ?>" class="genric-btn danger-border radius">Ver Pago</a>
+                        <a href="<?php echo "index.php?c=".seg::codificar("administrar")."&m=".seg::codificar("ver_pago") ?>" class="genric-btn danger-border radius">Ver Pago</a>
                         </div>   
                     </div>
                 </div>  

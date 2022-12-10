@@ -36,6 +36,7 @@
                 <div class="tab-content" id="nav-tabContent">
                     <!-- card one -->
                     <!-- card one -->
+                    <?php var_dump($listaPlat)?>
                     <?php foreach ($listaPlat as $plato){ if ((new MongoDB\BSON\ObjectId($plato->_id_categoria)) == $categoria["_id"]) { ?>
                     <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                         <div class="row no-gutters">
