@@ -27,7 +27,7 @@ class utils
             text-decoration: underline;
             color: inherit;
             font-weight: bold;
-            color: #7fbbfa;
+            color: #E2ED96;
         }
 
         h1 {
@@ -55,7 +55,8 @@ class utils
 
         button {
             font: inherit;
-            background-color: #b0a854;
+            background-color: #F9E79F 
+            ;
             border: none;
             padding: 10px;
             text-transform: uppercase;
@@ -88,11 +89,12 @@ class utils
 
                     <tr>
 
-                        <td bgcolor='#ffb606' align='center' style='color: white;'>
+                        <td bgcolor='#F9E79F 
+                        ' align='center' style='color: white;'>
                             <br><br>
                             <img alt='Flower' src='https://i.ibb.co/jrPsPwS/codigo-qr.png' width='200px' align='middle'>
 
-                            <h1 style='font-size: 40px;'> Bienvenido a KingDom QR! </h1>
+                            <h1 style='font-size: 40px;'> Bienvenido a tu restaurante QR! </h1>
                             <br>
                         </td>
                 </table>
