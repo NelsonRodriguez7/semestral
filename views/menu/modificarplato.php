@@ -25,6 +25,7 @@
                                         <option value="<?php echo $r->_id ?>"><?php echo $r->nombre_categoria ?></option>
 										<?php } ?>
 									</select>
+                                    
                                     <p><FONT COLOR="red">(*) Obligatorio</FONT></p>
                                 </div>
                                 <div>

@@ -94,24 +94,15 @@
             $obj = new categoria_plato();
             $obj->set_id_usuario(new MongoDB\BSON\ObjectId($id));
             $listar_categoria = $obj->listar_categorias();
-            if($listar_categoria !=""){
-                foreach ($listar_categoria as $l)
-                $listaCat[] = $l;
-            }else{
-                $listaCat[] = [];
-                $listaCat[] = array("nombre_categoria"=>"");
-            }
+            foreach ($listar_categoria as $l)
+            $listaCat[] = $l;
            
             $objplatos = new plato();
             $objplatos->set_id_usuario(new MongoDB\BSON\ObjectId($id));
             $lista_plato = $objplatos->listar_platos();
-            if($lista_plato !=""){
-                foreach ($lista_plato as $p)
-                $listaPlat[] = $p;
-            }else{
-                $listaPlat[] = [];
-                $listaPlat[] = array("nombre_plato"=>"");
-            }
+            foreach ($lista_plato as $p)
+            $listaPlat[] = $p;
+            
            
 
             $title = "Menú | DS 7";

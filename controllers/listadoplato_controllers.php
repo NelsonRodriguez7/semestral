@@ -130,7 +130,7 @@ class listadoplato_controllers
                 $descripcion_plato = filter_var($_POST["descripcion_plato"], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
                 $precio_plato = filter_var($_POST["precio_plato"], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
                 $foto = utils::subir_archivo($_FILES["txtFoto"]["tmp_name"],$_FILES["txtFoto"]["name"], "uploads");
-                
+                $id_categoria = filter_var($_POST["lstCategoria"], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
              
                 $id =  $_POST["_id"];
                 $id = filter_var($id, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
