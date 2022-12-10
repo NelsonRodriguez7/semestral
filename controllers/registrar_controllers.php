@@ -73,7 +73,7 @@
                 exit();
             }
             
-            $url= $_SERVER["REQUEST_SCHEME"] . "://" . $_SERVER["SERVER_NAME"] . "/index.php?c=" . seg::codificar("registrar") . "&m=" . seg::codificar("ver_menu") . "&id=" . $_SESSION["id_usuario"] ;  
+            $url= $_SERVER["REQUEST_SCHEME"] . "://" . $_SERVER["SERVER_NAME"] . "/index.php?c=" . seg::codificar("menu") . "&m=" . seg::codificar("menu") . "&id=" . $_SESSION["id_usuario"] ;  
             $title="Qr";
             require_once("views/template/header.php");
             require_once("views/template/nav.php");
@@ -103,17 +103,12 @@
             foreach ($lista_plato as $p)
             $listaPlat[] = $p;
             
-           
-
             $title = "Menú | DS 7";
             require_once("views/template/header.php");
             require_once("views/template/nav.php");
             require_once("views/menu/menu.php");
             require_once("views/template/footer.php");
 
-          
-           
-          
         }
 
 

@@ -53,6 +53,29 @@
             <!-- Gallery Bottom End -->
         </section>
         <!-- gallery Products End -->
+        <div class="about-area3 pt-180 pb-170 section-bg" data-background="assets/img/gallery/section_bg03.png">
+            <div class="container">
+                <div class="row justify-content-end">
+                    <div class="col-xl-6 col-lg-6 col-md-9 col-sm-11">
+                        <!-- Section Tittle -->
+                        <div class="section-tittle section-tittle2 mb-40">
+                            <span>Correo de subscripción</span>
+                            <h2>Para menternete al tanto de lo ultimo que tenemos</h2>
+                            <p>Subscribete y recibe notificaciones al correo </p>
+                        </div> 
+                        <!--Hero form -->
+                        <form action="#" class="search-box">
+                            <div class="input-form">
+                                <input type="text" placeholder="Your Email">
+                            </div>
+                            <div class="search-form">
+                                <button>Subscribe</button>
+                            </div>	
+                        </form>	
+                    </div>
+                </div>
+            </div>
+        </div>
         <!--? Our Services Start -->
         <div class="our-services section-padding30">
             <div class="container">
