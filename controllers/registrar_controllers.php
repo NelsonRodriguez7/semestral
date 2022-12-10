@@ -90,16 +90,29 @@
             $nombre_empresa = $datos["nombre_restaurante"];
             $logo = $datos["logo_empresa"];
             $imagenfondo = $datos["imagen_fondo"];
+            
             $obj = new categoria_plato();
             $obj->set_id_usuario(new MongoDB\BSON\ObjectId($id));
             $listar_categoria = $obj->listar_categorias();
-            foreach ($listar_categoria as $l)
-            $listaCat[] = $l;
+            if($listar_categoria !=""){
+                foreach ($listar_categoria as $l)
+                $listaCat[] = $l;
+            }else{
+                $listaCat[] = [];
+                $listaCat[] = array("nombre_categoria"=>"");
+            }
+           
             $objplatos = new plato();
             $objplatos->set_id_usuario(new MongoDB\BSON\ObjectId($id));
             $lista_plato = $objplatos->listar_platos();
-            foreach ($lista_plato as $p)
-            $listaPlat[] = $p;
+            if($lista_plato !=""){
+                foreach ($lista_plato as $p)
+                $listaPlat[] = $p;
+            }else{
+                $listaPlat[] = [];
+                $listaPlat[] = array("nombre_plato"=>"");
+            }
+           
 
             $title = "Menú | DS 7";
             require_once("views/template/header.php");

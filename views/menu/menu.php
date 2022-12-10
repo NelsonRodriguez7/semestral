@@ -18,9 +18,15 @@
                             <!--Nav Button  -->
                             <nav>   
                                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                    <?php foreach ($listaCat as $categoria) { ?>
-                                    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true"><?php echo $categoria->nombre_categoria?></a>
+                                    <?php if($listaCat !=""){?>
+                                        <?php foreach ($listaCat as $categoria) { ?>
+                                        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true"><?php echo $categoria->nombre_categoria?></a>
+                                        <?php } ?>
+                                    <?php }else{ ?>
+                                        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">No hay Categorias Agregadas</a>
                                     <?php } ?>
+                                    
+
                                 </div>
                             </nav>
                             <!--End Nav Button  -->
@@ -36,7 +42,7 @@
                 <div class="tab-content" id="nav-tabContent">
                     <!-- card one -->
                     <!-- card one -->
-                    <?php var_dump($listaPlat)?>
+                    <?php if($listaCat !=""){?>
                     <?php foreach ($listaPlat as $plato){ if ((new MongoDB\BSON\ObjectId($plato->_id_categoria)) == $categoria["_id"]) { ?>
                     <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                         <div class="row no-gutters">
@@ -65,6 +71,33 @@
                     </div>
                     <?php } ?>
                     <?php }?>
+                    <?php }else{ ?>
+                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                        <div class="row no-gutters">
+                            
+                            
+                            <div class="col-lg-3 col-md-12">
+                                <div class="row no-gutters">
+                                    
+                                    <div class="col-lg-12 col-md-6 col-sm-6">
+                                        <div class="gallery-box">
+                                            <div class="single-gallery">
+                                                <div class="gallery-img smoll-img" style="background-image: url(assets/img/gallery/gallery4.png);"></div>
+                                                <div class="g-caption">
+                                                    <span>No Datos</span>
+                                                    <h4>No Datos</h4>
+                                                    <p>No Datos</p>
+                                                    <a href="#" class="btn order-btn">No Datos</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <?php }?> 
             </div>
             <!-- Gallery Bottom End -->
         </section>
