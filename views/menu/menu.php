@@ -36,7 +36,7 @@
                                     <div class="single-gallery">
                                         <div class="gallery-img big-img" style="background-image: url(<?php echo $plato->foto_plato?>);"></div>
                                         <div class="g-caption">
-                                            <span><?php echo $plato->precio_plato?></span>
+                                            <span>$<?php echo $plato->precio_plato?></span>
                                             <h4><?php echo $plato->nombre_plato?></h4>
                                             <p><?php echo $plato->descripcion_plato?></p>
                                             <a href="#" class="btn order-btn">Order Now</a>
