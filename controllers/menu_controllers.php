@@ -27,7 +27,7 @@
             
             $title = "Menú | DS 7";
             require_once("views/template/header.php");
-            require_once("views/template/nav.php");
+            require_once("views/template/nav3.php");
             require_once("views/menu/menu.php");
             require_once("views/template/footer.php");
             

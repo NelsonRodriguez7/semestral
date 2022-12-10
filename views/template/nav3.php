@@ -28,7 +28,7 @@
                                     <div class="main-menu f-right d-none d-lg-block">
                                         <nav> 
                                             <ul id="navigation">
-                                                <li><a href="<?php echo "index.php?c=".seg::codificar("menu")."&m=".seg::codificar("menu")."id=".$id ?>">Home</a></li>
+                                                <li><a href="<?php echo "index.php?c=".seg::codificar("menu")."&m=".seg::codificar("menu"). "&id=" . $id ?>">Home</a></li>
                                                 <?php if(isset($_SESSION["usuario"])) {?>
                                                 
                                                 <?php }else{?>
