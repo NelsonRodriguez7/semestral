@@ -32,7 +32,7 @@
                                                 <?php if(isset($_SESSION["usuario"])) {?>
                                                 
                                                 <?php }else{?>
-                                                    <li><a href="<?php echo "index.php?c=".seg::codificar("registrar")."&m=".seg::codificar("registrar") ?>">Registrarte</a>
+                                                    <li><a href="<?php echo "index.php?c=".seg::codificar("registrar")."&m=".seg::codificar("registrar2"). "&id=" . $id ?>">Registrarte</a>
                                                     </li>
                                                 <?php }?>
 
@@ -51,9 +51,9 @@
                                     </div>
                                     <div class="header-right-btn f-right d-none d-lg-block ml-20">
                                     <?php if(isset($_SESSION["usuario"])) {?>
-                                        <a href="<?php echo "index.php?c=".seg::codificar("login")."&m=".seg::codificar("cerrar_sesion") ?>" class="border-btn header-btn">Logout</a>
+                                        <a href="<?php echo "index.php?c=".seg::codificar("login")."&m=".seg::codificar("cerrar_sesion2"). "&id=" . $id ?>" class="border-btn header-btn">Logout</a>
                                     <?php }else{?>
-                                        <a href="<?php echo "index.php?c=".seg::codificar("login")."&m=".seg::codificar("login") ?>" class="border-btn header-btn">Login</a>
+                                        <a href="<?php echo "index.php?c=".seg::codificar("login")."&m=".seg::codificar("login2"). "&id=" . $id ?>" class="border-btn header-btn">Login</a>
                                     <?php } ?>
                                     </div>
                                 </div>
