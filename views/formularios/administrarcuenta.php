@@ -29,6 +29,9 @@
                         </div>
                         <div class="section-tittle text-center mb-40"> 
                         <a href="<?php echo "index.php?c=".seg::codificar("administrar")."&m=".seg::codificar("ver_pago") ?>" class="genric-btn danger-border radius">Ver Pago</a>
+                        </div>
+                        <div class="section-tittle text-center mb-40"> 
+                        <a href="<?php echo "index.php?c=".seg::codificar("administrar")."&m=".seg::codificar("ver_subs") ?>" class="genric-btn danger-border radius">Ver Subscripciones</a>
                         </div>   
                     </div>
                 </div>  

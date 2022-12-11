@@ -27,6 +27,13 @@ class subscripcion
         }
     }
 
+    public function ver_subs2(){
+        $conexion = bd::connection();
+        $coleccion = $conexion->subscripcion;
+        $resultado = $coleccion->find(["_id_usuario" => ($this->id)]);
+        return $resultado;
+    }
+
     /**
      * Get the value of id
      */
