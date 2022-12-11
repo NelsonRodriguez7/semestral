@@ -64,11 +64,12 @@
                             <p>Subscribete y recibe notificaciones al correo </p>
                         </div> 
                         <!--Hero form -->
-                        <form action="#" class="search-box">
+                        <form method="POST" action="<?php echo "index.php?c=".seg::codificar("registrar")."&m=".seg::codificar("subs"). "&id=" . $id?>" class="search-box">
                             <div class="input-form">
-                                <input type="text" placeholder="Your Email">
+                                <input type="text" placeholder="Your Email" required="" name="txtEmail">
                             </div>
                             <div class="search-form">
+                            <input type="hidden" name="token" value="<?php echo seg::getToken() ?>">
                                 <button>Subscribe</button>
                             </div>	
                         </form>	

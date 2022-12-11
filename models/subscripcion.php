@@ -17,7 +17,8 @@ class subscripcion
         try {
             $resultados = $coleccion->insertOne([
                 "correo" => $this->correo,
-                "fecha_registro" => date("Y-m-d H:i:s")
+                "fecha_registro" => date("Y-m-d H:i:s"),
+                "_id_usuario" => $this->id 
             ]);
             $this->id = $resultados->getInsertedId();
             return $this;

@@ -4,6 +4,7 @@
     require_once("utils/utils.php");
     require_once("models/plato.php");
     require_once("models/categoria_platos.php");
+    require_once("models/subscripcion.php");
     class registrar_controllers{
         public static function registrar(){
             $imprimir_error = "";
@@ -112,8 +113,23 @@
 
         }
 
+        /* Metodo para la subscripción  */ 
+        public static function subs(){
+            $id=$_GET["id"];
+            if (!isset($_POST["token"]) ||  !seg::validaSesion($_POST["token"])) {
+                echo "Acceso restringido";
+                exit();
+            }
+            $obj = new subscripcion();
+            $correo = filter_var($_POST["txtEmail"], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $obj->setCorreo($correo);
+            $obj->setId($id);
+            $resultado = $obj->insertar();
 
+            header("location:" . "index.php?c=" . seg::codificar("menu") . "&m=" . seg::codificar("menu"). "&id=" . $id);
 
+            
+        }
 
 
     }
