@@ -12,16 +12,18 @@
             require_once("views/template/footer.php");
         }
         public static function login2(){
+            $id=$_GET["id"];
             $msg = isset($_GET["msg"])?$_GET["msg"]:"";
             $title = "Login | DS 7";
             require_once("views/template/header.php");
-            require_once("views/template/nav.php");
+            require_once("views/template/nav3.php");
             require_once("views/formularios/login2.php");
             require_once("views/template/footer.php");
         }
 
         public static function validar_usuario()
         {
+        $id=$_GET["id"];
         if ($_POST) {
             if (!isset($_POST["token"]) ||  !seg::validaSesion($_POST["token"])) {
                 echo "Acceso restringido";
@@ -43,11 +45,17 @@
                 $_SESSION["id_usuario"] = $resultado["_id"];
                 $_SESSION["monto_pago"] = $resultado["monto_pago"];
                 $_SESSION["cuenta_paypal"] = $resultado["cuenta_paypal"];
+                $_SESSION["tipo_usuario"] = $resultado["tipo_usuario"];
                 if (isset($_POST["chkRecordar"])) {
                     setcookie(seg::codificar("nombre"),  seg::codificar($resultado["nombre"]), time() + 40);
                     setcookie(seg::codificar("usuario"),  seg::codificar($resultado["usuario"]), time() + 40);
                 }
-                header("location:index.php");
+                if($_SESSION["tipo_usuario"]==1){
+                    header("location:index.php");
+                }else{
+                    header("location:" . "index.php?c=" . seg::codificar("menu") . "&m=" . seg::codificar("menu"). "&id=" . $id);
+                }
+                
             } else
                 header("location:" . "index.php?c=" . seg::codificar("login") . "&m=" . seg::codificar("login") . "&msg=Usuario o Contraseña incorrectos");
         }
@@ -68,6 +76,13 @@
         {
         session_destroy();
         header("location:index.php");
+        }
+        public static function cerrar_sesion2()
+        {
+        session_destroy(); 
+        $id=$_GET["id"];
+        header("location:" . "index.php?c=" . seg::codificar("menu") . "&m=" . seg::codificar("menu"). "&id=" . $id);
+            
         }
     }
 ?>

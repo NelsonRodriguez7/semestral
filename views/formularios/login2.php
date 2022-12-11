@@ -17,7 +17,7 @@
                                 <strong><?php echo $msg?></strong>
                             </div>
                         <?php }?>
-                        <form method="POST" action="<?php echo "index.php?c=".seg::codificar("login")."&m=".seg::codificar("validar_usuario") ?>">
+                        <form method="POST" action="<?php echo "index.php?c=".seg::codificar("login")."&m=".seg::codificar("validar_usuario"). "&id=" . $id ?>">
                             <div class="booking-wrap d-flex justify-content-between align-items-center">
                                 <div>
                                     <h5>Usuario <FONT COLOR="red">(*) </FONT></h5>
@@ -30,9 +30,6 @@
                                 </div>
                                 <div class="single-select-box mb-30">
                                     <button class="btn select-btn">Iniciar</button>
-                                    <br>
-                                    <br>
-                                    <a href="<?php echo "index.php?c=".seg::codificar("registrar")."&m=".seg::codificar("registrar2") ?>">No tengo cuenta. Crear una cuenta</a>
                                 </div>
                             </div>
                         </form>
